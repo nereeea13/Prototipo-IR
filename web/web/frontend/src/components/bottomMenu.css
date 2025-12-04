@@ -1,0 +1,22 @@
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ee4242; 
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  color: white;
+  font-size: 18px;
+  z-index: 999;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-item:hover {
+}
