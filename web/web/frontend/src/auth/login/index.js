@@ -1,60 +1,33 @@
-import React, { useState } from "react";
-import { Alert } from "reactstrap";
-import FormGenerator from "../../components/formGenerator/formGenerator";
-import tokenService from "../../services/token.service";
-import "../../static/css/auth/authButton.css";
-import { loginFormInputs } from "./form/loginFormInputs";
+import { useState } from "react";
+import { login } from "../api";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [message, setMessage] = useState(null)
-  const loginFormRef = React.createRef();      
-  
+  const [username, setUser] = useState("");
+  const [password, setPass] = useState("");
+  const navigate = useNavigate();
 
-  async function handleSubmit({ values }) {
+  const handleLogin = async () => {
+    const res = await login(username, password);
 
-    const reqBody = values;
-    setMessage(null);
-    await fetch("/api/v1/auth/signin", {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(reqBody),
-    })
-      .then(function (response) {
-        if (response.status === 200) return response.json();
-        else return Promise.reject("Invalid login attempt");
-      })
-      .then(function (data) {
-        tokenService.setUser(data);
-        tokenService.updateLocalAccessToken(data.token);
-        window.location.href = "/";
-      })
-      .catch((error) => {         
-        setMessage(error);
-      });            
-  }
+    if (res.error) {
+      alert("Usuario o contraseña incorrectos");
+      return;
+    }
 
-  
-    return (
-      <div className="auth-page-container">
-        {message ? (
-          <Alert color="primary">{message}</Alert>
-        ) : (
-          <></>
-        )}
+    localStorage.setItem("token", res.token);
+    localStorage.setItem("role", res.role);
 
-        <h1>Login</h1>
+    if (res.role === "JEFE") navigate("/jefe");
+    else navigate("/empleado");
+  };
 
-        <div className="auth-form-container">
-          <FormGenerator
-            ref={loginFormRef}
-            inputs={loginFormInputs}
-            onSubmit={handleSubmit}
-            numberOfColumns={1}
-            listenEnterKey
-            buttonText="Login"
-            buttonClassName="auth-button"
-          />
-        </div>
-      </div>
-    );  
+  return (
+    <div>
+      <h2>Login</h2>
+      <input placeholder="Usuario" onChange={e => setUser(e.target.value)} />
+      <input placeholder="Contraseña" type="password" onChange={e => setPass(e.target.value)} />
+      <button onClick={handleLogin}>Entrar</button>
+    </div>
+  );
 }
