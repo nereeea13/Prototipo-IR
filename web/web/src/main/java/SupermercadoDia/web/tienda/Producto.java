@@ -7,6 +7,7 @@ import SupermercadoDia.web.model.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,5 +27,8 @@ public class Producto extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private CategoriaProducto categoria;
+
+    @OneToOne(mappedBy = "producto")
+    private StockProducto stock;
     
 }

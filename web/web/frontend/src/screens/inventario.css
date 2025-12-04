@@ -1,0 +1,182 @@
+/* Contenedor general */
+/* --- PARCHE: forzar full-width y neutralizar contenedores padres --- */
+.inv-page {
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  left: calc(50% - 50vw) !important; /* centra el elemento en la ventana */
+  background: transparent; /* opcional: evita que el fondo del padre asome */
+}
+
+
+/* Header */
+.inv-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fd7a7a;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.inv-header h2 {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+.inv-back {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 2.25rem;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+/* Controles (select + acciones) */
+.inv-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.75rem 0 1.25rem;
+  flex-wrap: wrap;
+}
+.inv-select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #d4d4d4;
+  min-width: 220px;
+}
+.inv-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.btn-filter, .btn-sort {
+  background: transparent;
+  border: 1px solid #cfe3ff;
+  color: #2b7dd9;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Lista */
+.inv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Tarjeta */
+.inv-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.7rem;
+  background: #fff9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border: 2px solid #fd7a7a;
+}
+.inv-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 1px solid #eee;
+}
+.inv-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.inv-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+/* Meta (cantidad, estado) */
+.inv-meta {
+  font-size: 0.92rem;
+  color: #333;
+}
+.meta-label {
+  color: #666;
+  margin-right: 0.4rem;
+}
+.meta-value {
+  font-weight: 600;
+}
+
+/* Badges */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 6px;
+  font-weight: 700;
+  display: inline-block;
+}
+.badge--low {
+  background: #fff0f0;
+  color: #d23;
+  border: 1px solid #f5c8c8;
+}
+.badge--normal {
+  background: #f0fff4;
+  color: #1a8a3a;
+  border: 1px solid #cfeccc;
+}
+.badge--over {
+  background: #fff9ec;
+  color: #a86d00;
+  border: 1px solid #f3e0b8;
+}
+
+/* Edit link */
+.inv-edit {
+  color: #1f7be6;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-top: 6px;
+  align-self: flex-start;
+}
+.inv-edit:hover { text-decoration: underline; }
+
+/* FAB (botón flotante) */
+.inv-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 80px; /* arriba del bottom menu */
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #0ea5a1;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  box-shadow: 0 8px 22px rgba(14,165,161,0.25);
+  cursor: pointer;
+}
+
+/* Responsive: en móvil reduce padding y tamaño imagen */
+@media (max-width: 640px) {
+  .inv-page { padding: 0.5rem; }
+  .inv-img { width: 60px; height: 60px; }
+  .inv-card { padding: 0.6rem; }
+  .inv-header h2 { font-size: 1.1rem; }
+}
