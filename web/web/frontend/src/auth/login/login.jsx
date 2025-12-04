@@ -22,9 +22,14 @@ function Login() {
     }
 
     const data = await response.json();
+    console.log(data);
 
     localStorage.setItem("token", data.token);
     localStorage.setItem("role", data.role);
+    localStorage.setItem("userId", data.id);
+    localStorage.setItem("username", data.username);
+
+
 
     if (data.role === "JEFE") navigate("/jefe");
     else if (data.role === "EMPLEADO") navigate("/empleado");

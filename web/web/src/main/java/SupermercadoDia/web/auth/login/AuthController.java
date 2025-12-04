@@ -1,6 +1,7 @@
 package SupermercadoDia.web.auth.login;
 
 import SupermercadoDia.web.util.JwtUtil;
+import SupermercadoDia.web.user.User;
 import SupermercadoDia.web.user.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,21 +21,26 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public Map<String, String> login(@RequestBody Map<String, String> body) {
+public Map<String, String> login(@RequestBody Map<String, String> body) {
+    String username = body.get("username");
+    String password = body.get("password");
 
-        String user = body.get("username");
-        String pass = body.get("password");
+    User user = userService.findByUsername(username)
+                              .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        if (!userService.validateUser(user, pass)) {
-            return Map.of("error", "Credenciales incorrectas");
-        }
-
-        String role = userService.getRole(user);
-        String token = jwtUtil.generateToken(user);
-
-        return Map.of(
-                "token", token,
-                "role", role
-        );
+    if (!user.getPassword().equals(password)) {
+        return Map.of("error", "Credenciales incorrectas");
     }
+
+    String token = jwtUtil.generateToken(user.getId().toString()); // Opcional: token puede usar id
+    String role = user.getRole();
+
+    return Map.of(
+        "token", token,
+        "role", role,
+        "id", user.getId().toString(),
+        "username", user.getUsername()
+    );
+}
+
 }

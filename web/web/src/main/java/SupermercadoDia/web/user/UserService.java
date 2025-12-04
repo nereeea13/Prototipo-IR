@@ -1,28 +1,30 @@
 package SupermercadoDia.web.user;
 
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
-    private final Map<String, String> userPasswords = Map.of(
-            "jefe", "jefetienda",
-            "empleado", "empleado"
-    );
+    private final UserRepository repo;
 
-    private final Map<String, String> userRoles = Map.of(
-            "jefe", "JEFE",
-            "empleado", "EMPLEADO"
-    );
+    public UserService(UserRepository repo) {
+        this.repo = repo;
+    }
 
     public boolean validateUser(String username, String password) {
-        return userPasswords.containsKey(username) &&
-               userPasswords.get(username).equals(password);
+        Optional<User> user = repo.findByUsername(username);
+        return user.isPresent() && user.get().getPassword().equals(password);
     }
 
     public String getRole(String username) {
-        return userRoles.get(username);
+        return repo.findByUsername(username)
+                   .map(User::getRole)
+                   .orElse(null);
+    }
+
+    public Optional<User> findByUsername(String username) {
+        return repo.findByUsername(username);
     }
 }
+

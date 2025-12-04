@@ -47,3 +47,19 @@ INSERT INTO stock_producto(id, stock_total, stock_minimo, stock_almacen, stock_e
     (18, 300, 40, 260, 40, 18),-- Cerveza rubia
     (19, 90, 15, 90, 0, 19),   -- Detergente líquido
     (20, 120, 20, 110, 10, 20);-- Gel corporal
+
+
+
+
+INSERT INTO users(id,username,password,role) VALUES
+    (1,'jefe','jefe','JEFE'),
+    (2,'empleado1','empleado1','EMPLEADO'),
+    (3,'empleado2','empleado2','EMPLEADO');
+
+
+/*
+INSERT INTO users(id,username,password,role) VALUES
+    (1,'jefe','$2a$10$7QJf1o8e0G6H9c4cX9bZ1u5F8Kqz1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z','JEFE'),
+    (2,'empleado1','$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36c6B8m7r9g6r9g6r9g6r9g6','EMPLEADO'),
+    (3,'empleado2','$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36c6B8m7r9g6r9g6r9g6r9g6','EMPLEADO');
+*/
