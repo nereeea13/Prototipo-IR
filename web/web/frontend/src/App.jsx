@@ -1,29 +1,47 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-function ErrorFallback({ error, resetErrorBoundary }) {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  )
-}
+import Login from "./auth/login/login";
+import JefeHome from "./home/homeJefe";
+import EmpleadoHome from "./home/homeEmpleado";
+import Perfil from "./profile/Perfil";
+import ProtectedRoute from "./auth/ProtectedRoute";
 
 function App() {
-  const [mensaje, setMensaje] = useState("");
-  
-
-  useEffect(() => {
-    fetch("http://localhost:8080/api/hola")
-      .then(res => res.text())
-      .then(data => setMensaje(data))
-      .catch(err => console.error(err));
-  }, []);
+  // const role = localStorage.getItem("role");
 
   return (
-    <h1>{mensaje}</h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+
+        <Route
+          path="/jefe"
+          element={
+            <ProtectedRoute roleRequired="JEFE">
+              <JefeHome />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/empleado"
+          element={
+            <ProtectedRoute roleRequired="EMPLEADO">
+              <EmpleadoHome />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/perfil"
+          element={
+            <ProtectedRoute>
+              <Perfil />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
