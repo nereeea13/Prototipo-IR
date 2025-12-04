@@ -5,6 +5,7 @@ import JefeHome from "./home/homeJefe";
 import EmpleadoHome from "./home/homeEmpleado";
 import Perfil from "./profile/Perfil";
 import ProtectedRoute from "./auth/ProtectedRoute";
+import InventarioTienda from "./screens/inventario";
 
 function App() {
   // const role = localStorage.getItem("role");
@@ -40,6 +41,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/inventario-tienda" element={<InventarioTienda />} />
+
       </Routes>
     </BrowserRouter>
   );
