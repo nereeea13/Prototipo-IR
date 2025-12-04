@@ -8,8 +8,8 @@ import java.util.Map;
 public class UserService {
 
     private final Map<String, String> userPasswords = Map.of(
-            "jefe", "1234",
-            "empleado", "1234"
+            "jefe", "jefetienda",
+            "empleado", "empleado"
     );
 
     private final Map<String, String> userRoles = Map.of(

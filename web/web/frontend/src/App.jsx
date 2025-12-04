@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import JefeHome from "./pages/JefeHome";
-import EmpleadoHome from "./pages/EmpleadoHome";
+
+import Login from "./auth/login";
+import JefeHome from "./home/homeJefe";
+import EmpleadoHome from "./home/homeEmpleado";
 
 function App() {
   const role = localStorage.getItem("role");
@@ -12,7 +13,7 @@ function App() {
         <Route path="/" element={<Login />} />
 
         <Route path="/jefe" element={
-          role === "JEFE" ? <JefeHome /> : <Navigate to="/" />
+          role === "JEFE" ? <JefeHome/> : <Navigate to="/" />
         } />
 
         <Route path="/empleado" element={

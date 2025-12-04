@@ -2,28 +2,21 @@ package SupermercadoDia.web.util;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.stereotype.Component;
+import io.jsonwebtoken.security.Keys;
+import java.security.Key;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
 @Component
 public class JwtUtil {
 
-    private final String SECRET = "secreto123";
+    private final Key secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256); // genera clave segura de 256 bits
 
-    public String generateToken(String username, String role) {
+    public String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
-                .claim("role", role)
-                .setExpiration(new Date(System.currentTimeMillis() + 86400000))
-                .signWith(SignatureAlgorithm.HS256, SECRET)
+                .signWith(secretKey)
                 .compact();
     }
-
-    public String extractRole(String token) {
-        return (String) Jwts.parser().setSigningKey(SECRET)
-                .parseClaimsJws(token)
-                .getBody()
-                .get("role");
-    }
 }
+
