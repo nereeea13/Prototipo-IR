@@ -54,6 +54,39 @@ INSERT INTO stock_producto(id, stock_total, stock_minimo, stock_almacen, stock_e
     (20, 120, 20, 110, 10, 20);-- Gel corporal
 
 
+INSERT INTO empleados 
+(id, nombre, apellidos, dni, telefono, email, salario, dias_libres_restantes, rol, 
+ contrato_horas_semanales, tipo_contrato, preferencia_turno, estado)
+VALUES
+(1, 'Laura', 'García Pérez', '12345678A', '600111222', 'laura.garcia@super.com', '1200', 10,
+ 'CAJERO', 40, 'JORNADA_COMPLETA', 'MANANA', 'ACTIVO'),
+
+(2, 'Carlos', 'Santos Ruiz', '23456789B', '600222333', 'carlos.santos@super.com', '1100', 8,
+ 'REPONEDOR', 30, 'PARCIAL', 'TARDE', 'ACTIVO'),
+
+(3, 'María', 'Lopez Díaz', '34567890C', '600333444', 'maria.lopez@super.com', '1500', 12,
+ 'JEFE_TIENDA', 40, 'JORNADA_COMPLETA', 'INDIFERENTE', 'ACTIVO'),
+
+(4, 'Javier', 'Torres Molina', '45678901D', '600444555', 'javier.torres@super.com', '1150', 6,
+ 'CAJERO', 20, 'PARCIAL', 'TARDE', 'ACTIVO'),
+
+(5, 'Andrea', 'Muñoz Vera', '56789012E', '600555666', 'andrea.munoz@super.com', '1250', 9,
+ 'REPONEDOR', 35, 'JORNADA_COMPLETA', 'MANANA', 'ACTIVO'),
+
+(6, 'Pablo', 'Martín López', '67890123F', '600666777', 'pablo.martin@super.com', '1000', 7,
+ 'PESCADERO', 25, 'PARCIAL', 'MANANA', 'ACTIVO'),
+
+(7, 'Sonia', 'Navarro Ruiz', '78901234G', '600777888', 'sonia.navarro@super.com', '1400', 11,
+ 'PANADERO', 40, 'JORNADA_COMPLETA', 'INDIFERENTE', 'ACTIVO'),
+
+(8, 'Miguel', 'Herrera Soto', '89012345H', '600888999', 'miguel.herrera@super.com', '1600', 14,
+ 'CARNICERO', 40, 'JORNADA_COMPLETA', 'TARDE', 'ACTIVO'),
+
+(9, 'Raquel', 'Dominguez Alba', '90123456I', '600999000', 'raquel.dominguez@super.com', '1300', 9,
+ 'CAJERO', 30, 'PARCIAL', 'MANANA', 'INACTIVO'),
+
+(10, 'David', 'Serrano Cruz', '01234567J', '611222333', 'david.serrano@super.com', '1450', 10,
+ 'REPONEDOR', 37, 'JORNADA_COMPLETA', 'TARDE', 'ACTIVO');
 
 
 

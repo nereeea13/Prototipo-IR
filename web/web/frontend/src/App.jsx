@@ -6,6 +6,8 @@ import EmpleadoHome from "./home/homeEmpleado";
 import Perfil from "./profile/Perfil";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import InventarioTienda from "./screens/inventario";
+import PedidosIntermedia from "./screens/pedidosIntermedia";
+import HorariosIntermedia from "./screens/horariosIntermedia";
 
 function App() {
   // const role = localStorage.getItem("role");
@@ -43,6 +45,10 @@ function App() {
         />
 
         <Route path="/inventario-tienda" element={<InventarioTienda />} />
+
+        <Route path="/pedidos-mercancia" element={<PedidosIntermedia />} />
+
+        <Route path="/gestionar-horarios" element={<HorariosIntermedia />} />
 
       </Routes>
     </BrowserRouter>
