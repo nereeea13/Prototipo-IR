@@ -26,8 +26,8 @@
 /* ===== Botón principal ===== */
 
 .empleado-btn {
-  width: 100%;        /* tamaño horizontal */
-  height: 5rem;        /* tamaño vertical */
+  width: 90%;        /* tamaño horizontal */
+  height: 4rem;        /* tamaño vertical */
   display: flex;
   align-items: center;
   justify-content: center;

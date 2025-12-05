@@ -11,6 +11,26 @@
   left: 0 !important;
 }
 
+
+/* ===== Flecha de volver ===== */
+.back-arrow {
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  color:rgb(143, 0, 0);
+}
+
+.back-arrow:hover {
+  background-color: rgba(143, 0, 0, 0.08);
+}
+
+
 /* ===== Contenedor de botones ===== */
 
 .empleado-buttons {
