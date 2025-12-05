@@ -1,4 +1,4 @@
-package SupermercadoDia.web.tienda;
+package SupermercadoDia.web.producto;
 
 
 
@@ -23,14 +23,10 @@ public class ProductoController {
     }
 
     @GetMapping
-    public List<ProductoDTO> getAllProductos() {
+    public ListaProductosDTO getAllProductos() {
         List<Producto> l = productoService.findAllProductos();
-        List<ProductoDTO> res = new ArrayList<>();
-        for ( Producto p : l) {
-            ProductoDTO p1 = new ProductoDTO(p);
-            res.add(p1);
-        }
-        return res;
+        ListaProductosDTO listaDTO = new ListaProductosDTO(l);
+        return listaDTO;
     }
 
     @GetMapping("/{id}")
@@ -41,16 +37,12 @@ public class ProductoController {
     }
 
     @GetMapping("/categoria/{categoria}")
-    public ResponseEntity<List<ProductoDTO>> getProductosByCategoria(@PathVariable String categoria) {
+    public ResponseEntity<ListaProductosDTO> getProductosByCategoria(@PathVariable String categoria) {
         try {
             CategoriaProducto cat = CategoriaProducto.valueOf(categoria.toUpperCase());
             List<Producto> productos = productoService.findProductosByCategoria(cat);
-            List<ProductoDTO> res = new ArrayList<>();
-                for ( Producto p : productos) {
-                    ProductoDTO p1 = new ProductoDTO(p);
-                    res.add(p1);
-                }
-            return ResponseEntity.ok(res);
+            ListaProductosDTO listaDTO = new ListaProductosDTO(productos);
+            return ResponseEntity.ok(listaDTO);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
         }

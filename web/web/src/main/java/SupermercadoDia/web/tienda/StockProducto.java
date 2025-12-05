@@ -1,6 +1,7 @@
 package SupermercadoDia.web.tienda;
 
 import SupermercadoDia.web.model.BaseEntity;
+import SupermercadoDia.web.producto.Producto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;

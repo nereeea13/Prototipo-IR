@@ -19,11 +19,15 @@ function stockState(qty) {
 }
 
 export default function InventarioTienda() {
+  // const BACKEND_URL = "http://localhost:8080"; // URL de tu Spring Boot
   const navigate = useNavigate();
   const [productos, setProductos] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  console.log('productos', productos);
+  console.log('categoriaSeleccionada', categoriaSeleccionada);
 
   // fetch helper: si category = "" hace GET /api/productos, si no GET /api/productos/categoria/{categoria}
   const fetchProductos = async (categoria = "") => {
@@ -44,17 +48,8 @@ export default function InventarioTienda() {
       // Asumimos que tu Producto tiene al menos: id, nombre, fechaCaducidad, categoria, precio.
       // Si tu API no devuelve "cantidad" (stock), hay que integrar con endpoint de stock. 
       // Aquí suponemos que producto.cantidad existe para mostrar ejemplo; si no, mostramos 0.
-      const mapped = data.map((p) => ({
-        id: p.id,
-        nombre: p.nombre,
-       img: p.imagenUrl && p.imagenUrl.startsWith("http")
-     ? p.imagenUrl
-     : `https://via.placeholder.com/80x80?text=${encodeURIComponent(p.nombre)}`,
-        cantidad: p.cantidad !== undefined ? p.cantidad : (p.stockTotal ?? 0),
-        fechaCaducidad: p.fechaCaducidad ?? null,
-        categoria: p.categoria ?? null,
-      }));
-      setProductos(mapped);
+  
+      setProductos(Array.isArray(data.productos) ? data.productos : []);
     } catch (err) {
       console.error(err);
       setError(err.message || "Error desconocido");
@@ -74,6 +69,8 @@ export default function InventarioTienda() {
     fetchProductos(categoriaSeleccionada);
   }, [categoriaSeleccionada]);
 
+
+  // SI NO CARGA LAS FOTOS: PONER src={`${BACKEND_URL}${p.foto}`}
   return (
     <div
       className="inv-page"
@@ -129,18 +126,18 @@ export default function InventarioTienda() {
             const state = stockState(p.cantidad);
             return (
               <li className="inv-card" key={p.id}>
-                <img className="inv-img" src={p.img} alt={p.nombre} />
+                <img className="inv-img" src={p.foto} alt={p.nombre} /> 
                 <div className="inv-content">
                   <div className="inv-title">{p.nombre}</div>
 
                   <div className="inv-meta">
                     <span className="meta-label">Cantidad:</span>{" "}
-                    <span className="meta-value">{p.cantidad} uds.</span>
+                    <span className="meta-value">{p.cantidadTotal} uds.</span>
                   </div>
 
                   <div className="inv-meta">
                     <span className="meta-label">Estado stock:</span>{" "}
-                    <span className={`badge ${state.className}`}>{state.label}</span>
+                    <span className={`badge ${state.className}`}>{p.estadoStock}</span>
                   </div>
 
                   {p.fechaCaducidad && (

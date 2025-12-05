@@ -1,5 +1,5 @@
 
-package SupermercadoDia.web.tienda;
+package SupermercadoDia.web.producto;
 
 import java.util.List;
 import java.util.Optional;

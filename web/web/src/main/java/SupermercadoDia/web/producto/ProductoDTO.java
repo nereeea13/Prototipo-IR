@@ -1,9 +1,14 @@
-package SupermercadoDia.web.tienda;
+package SupermercadoDia.web.producto;
 
 import SupermercadoDia.web.enumerados.CategoriaProducto;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import lombok.Getter;
+import lombok.Setter;
 
+
+@Getter
+@Setter
 public class ProductoDTO {
 
         private Integer id;
@@ -17,6 +22,8 @@ public class ProductoDTO {
 
         private String estadoStock;
 
+        private String foto;
+
 
         
     public ProductoDTO() {
@@ -27,6 +34,7 @@ public class ProductoDTO {
         this.nombre= p.getNombre();
         this.categoria= p.getCategoria();
         this.cantidadTotal = p.getStock().getStockTotal();
+        this.foto = p.getFoto();
         if(p.getStock().getStockTotal()< p.getStock().getStockMinimo()){
             this.estadoStock= "BAJO";
         } else if (p.getStock().getStockMinimo() < p.getStock().getStockTotal() && p.getStock().getStockTotal() < 1000){
