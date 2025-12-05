@@ -1,26 +1,31 @@
 
-INSERT INTO productos(id,nombre,descripcion,precio,fecha_caducidad, categoria) VALUES
-     (1,'Manzana','manzana pink lady', 0.5,'2025-12-26', 'FRESCOS'),
-     (2,'Croquetas de Jamón','croquetas de jamón marca DIA', 4.75,'2026-02-26', 'CONGELADOS'),
-     (3,'Arroz bomba','arroz bomba marca La Fallera', 5.10,'2026-12-26', 'DESPENSA'),
-     (4,'Zumo de piña','zumo de piña recién exprimido', 3.80,'2025-12-15', 'BEBIDAS'),
-     (5,'Lejía','lejía blanca de baños', 3.10,null, 'HOGAR'),
-     (6,'Jabón de manos','jabón de manos olor lavanda', 2.20,null, 'CUIDADO_PERSONAL'),
-     (7, 'Pasta Fusilli', 'pasta fusilli italiana Barilla', 1.35, '2026-08-10', 'DESPENSA'),
-     (8, 'Leche entera', 'leche entera semipasteurizada 1L', 1.05, '2025-12-30', 'FRESCOS'),
-     (9, 'Huevos camperos', 'huevos camperos pack 12 unidades', 2.95, '2025-12-22', 'FRESCOS'),
-     (10, 'Agua mineral', 'agua mineral natural botella 1.5L', 0.75, '2027-05-10', 'BEBIDAS'),
-     (11, 'Papel higiénico', 'papel higiénico doble capa pack 12', 4.10, null, 'HOGAR'),
-     (12, 'Champú anticaspa', 'champú anticaspa marca DIA 400ml', 3.40, null, 'CUIDADO_PERSONAL'),
-     (13, 'Pollo entero', 'pollo fresco entero preparado', 6.80, '2025-12-14', 'FRESCOS'),
-     (14, 'Pizza congelada', 'pizza congelada jamón y queso', 2.95, '2026-03-01', 'CONGELADOS'),
-     (15, 'Helado de vainilla', 'helado de vainilla tarrina 1L', 3.20, '2026-06-20', 'CONGELADOS'),
-     (16, 'Cacao soluble', 'cacao soluble en polvo 500g', 3.50, '2027-02-10', 'DESPENSA'),
-     (17, 'Galletas María', 'galletas María clásicas pack 3', 1.20, '2027-01-10', 'DESPENSA'),
-     (18, 'Cerveza rubia', 'cerveza rubia lata 33cl', 0.85, '2026-10-10', 'BEBIDAS'),
-     (19, 'Detergente líquido', 'detergente ropa 50 lavados', 7.90, null, 'HOGAR'),
-     (20, 'Gel corporal', 'gel corporal hidratante aloe 750ml', 2.95, null, 'CUIDADO_PERSONAL');
+INSERT INTO users(id,username,password,role) VALUES
+    (1,'jefe','jefe','JEFE'),
+    (2,'empleado1','empleado1','EMPLEADO'),
+    (3,'empleado2','empleado2','EMPLEADO');
 
+
+INSERT INTO productos(id,nombre,descripcion,precio,fecha_caducidad, categoria, foto) VALUES
+     (1,'Manzana','manzana pink lady', 0.5,'2025-12-26', 'FRESCOS', '/images/manzana.jpg'),
+     (2,'Croquetas de Jamón','croquetas de jamón marca DIA', 4.75,'2026-02-26', 'CONGELADOS', '/images/croquetas de jamon.jpg'),
+     (3,'Arroz bomba','arroz bomba marca La Fallera', 5.10,'2026-12-26', 'DESPENSA', '/images/arroz bomba.jpg'),
+     (4,'Zumo de piña','zumo de piña recién exprimido', 3.80,'2025-12-15', 'BEBIDAS', '/images/zumo.jpg'),
+     (5,'Lejía','lejía blanca de baños', 3.10,null, 'HOGAR', '/images/lejia.jpg'),
+     (6,'Jabón de manos','jabón de manos olor lavanda', 2.20,null, 'CUIDADO_PERSONAL', '/images/jabon de manos.jpg'),
+     (7, 'Pasta Fusilli', 'pasta fusilli italiana Barilla', 1.35, '2026-08-10', 'DESPENSA', '/images/pasta fusilli.jpg'),
+     (8, 'Leche entera', 'leche entera semipasteurizada 1L', 1.05, '2025-12-30', 'FRESCOS', null),
+     (9, 'Huevos camperos', 'huevos camperos pack 12 unidades', 2.95, '2025-12-22', 'FRESCOS', null),
+     (10, 'Agua mineral', 'agua mineral natural botella 1.5L', 0.75, '2027-05-10', 'BEBIDAS', null),
+     (11, 'Papel higiénico', 'papel higiénico doble capa pack 12', 4.10, null, 'HOGAR', null),
+     (12, 'Champú anticaspa', 'champú anticaspa marca DIA 400ml', 3.40, null, 'CUIDADO_PERSONAL', null),
+     (13, 'Pollo entero', 'pollo fresco entero preparado', 6.80, '2025-12-14', 'FRESCOS', null),
+     (14, 'Pizza congelada', 'pizza congelada jamón y queso', 2.95, '2026-03-01', 'CONGELADOS', null),
+     (15, 'Helado de vainilla', 'helado de vainilla tarrina 1L', 3.20, '2026-06-20', 'CONGELADOS', null),
+     (16, 'Cacao soluble', 'cacao soluble en polvo 500g', 3.50, '2027-02-10', 'DESPENSA', null),
+     (17, 'Galletas María', 'galletas María clásicas pack 3', 1.20, '2027-01-10', 'DESPENSA', null),
+     (18, 'Cerveza rubia', 'cerveza rubia lata 33cl', 0.85, '2026-10-10', 'BEBIDAS', null),
+     (19, 'Detergente líquido', 'detergente ropa 50 lavados', 7.90, null, 'HOGAR', null),
+     (20, 'Gel corporal', 'gel corporal hidratante aloe 750ml', 2.95, null, 'CUIDADO_PERSONAL', null);
 
 
 INSERT INTO stock_producto(id, stock_total, stock_minimo, stock_almacen, stock_expuesto, producto_id) VALUES
@@ -51,15 +56,4 @@ INSERT INTO stock_producto(id, stock_total, stock_minimo, stock_almacen, stock_e
 
 
 
-INSERT INTO users(id,username,password,role) VALUES
-    (1,'jefe','jefe','JEFE'),
-    (2,'empleado1','empleado1','EMPLEADO'),
-    (3,'empleado2','empleado2','EMPLEADO');
 
-
-/*
-INSERT INTO users(id,username,password,role) VALUES
-    (1,'jefe','$2a$10$7QJf1o8e0G6H9c4cX9bZ1u5F8Kqz1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z','JEFE'),
-    (2,'empleado1','$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36c6B8m7r9g6r9g6r9g6r9g6','EMPLEADO'),
-    (3,'empleado2','$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36c6B8m7r9g6r9g6r9g6r9g6','EMPLEADO');
-*/
