@@ -30,17 +30,19 @@ public class Empleado extends BaseEntity {
     private String dni;
 
 
-    private String telefono;
+    private Integer telefono;
 
 
     private String email;
 
 
-    private String salario;
+    private Double salario;
 
 
 
-    private Integer diasLibresRestantes;
+    private Integer diasVacacionesVeranoRestantes;
+
+    private Integer diasVacacionesInviernoRestantes;
 
     @Enumerated(EnumType.STRING)
     private RolEmpleado rol;
@@ -59,6 +61,32 @@ public class Empleado extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private EstadoEmpleado estado;
+
+
+    private String foto; 
+
+    public Empleado() {
+    }
+
+    public Empleado(String nombre, String apellidos, String dni, Integer telefono, String email, Double salario,
+            Integer diasVacacionesVeranoRestantes, Integer diasVacacionesInviernoRestantes, RolEmpleado rol,
+            Integer contratoHorasSemanales, TipoContrato tipoContrato, PreferenciaTurno preferenciaTurno,
+            EstadoEmpleado estado, String foto) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.email = email;
+        this.salario = salario;
+        this.diasVacacionesVeranoRestantes = diasVacacionesVeranoRestantes;
+        this.diasVacacionesInviernoRestantes = diasVacacionesInviernoRestantes;
+        this.rol = rol;
+        this.contratoHorasSemanales = contratoHorasSemanales;
+        this.tipoContrato = tipoContrato;
+        this.preferenciaTurno = preferenciaTurno;
+        this.estado = estado;
+        this.foto = foto;
+    }
 
 
 
