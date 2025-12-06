@@ -12,21 +12,20 @@ INSERT INTO productos(id,nombre,descripcion,precio,fecha_caducidad, categoria, f
      (4,'Zumo de piña','zumo de piña recién exprimido', 3.80,'2025-12-15', 'BEBIDAS', '/images/zumo.jpg'),
      (5,'Lejía','lejía blanca de baños', 3.10,null, 'HOGAR', '/images/lejia.jpg'),
      (6,'Jabón de manos','jabón de manos olor lavanda', 2.20,null, 'CUIDADO_PERSONAL', '/images/jabon de manos.jpg'),
-     (7, 'Pasta Fusilli', 'pasta fusilli italiana Barilla', 1.35, '2026-08-10', 'DESPENSA', '/images/pasta fusilli.jpg'),
-     (8, 'Leche entera', 'leche entera semipasteurizada 1L', 1.05, '2025-12-30', 'FRESCOS', null),
-     (9, 'Huevos camperos', 'huevos camperos pack 12 unidades', 2.95, '2025-12-22', 'FRESCOS', null),
-     (10, 'Agua mineral', 'agua mineral natural botella 1.5L', 0.75, '2027-05-10', 'BEBIDAS', null),
-     (11, 'Papel higiénico', 'papel higiénico doble capa pack 12', 4.10, null, 'HOGAR', null),
-     (12, 'Champú anticaspa', 'champú anticaspa marca DIA 400ml', 3.40, null, 'CUIDADO_PERSONAL', null),
-     (13, 'Pollo entero', 'pollo fresco entero preparado', 6.80, '2025-12-14', 'FRESCOS', null),
-     (14, 'Pizza congelada', 'pizza congelada jamón y queso', 2.95, '2026-03-01', 'CONGELADOS', null),
-     (15, 'Helado de vainilla', 'helado de vainilla tarrina 1L', 3.20, '2026-06-20', 'CONGELADOS', null),
-     (16, 'Cacao soluble', 'cacao soluble en polvo 500g', 3.50, '2027-02-10', 'DESPENSA', null),
-     (17, 'Galletas María', 'galletas María clásicas pack 3', 1.20, '2027-01-10', 'DESPENSA', null),
-     (18, 'Cerveza rubia', 'cerveza rubia lata 33cl', 0.85, '2026-10-10', 'BEBIDAS', null),
-     (19, 'Detergente líquido', 'detergente ropa 50 lavados', 7.90, null, 'HOGAR', null),
-     (20, 'Gel corporal', 'gel corporal hidratante aloe 750ml', 2.95, null, 'CUIDADO_PERSONAL', null);
-
+     (7, 'Pasta Fusilli', 'pasta fusilli italiana Barilla', 1.35, '2026-08-10', 'DESPENSA', '/images/pasta fusili.jpg'),
+     (8, 'Leche entera', 'leche entera semipasteurizada 1L', 1.05, '2025-12-30', 'FRESCOS', '/images/leche.jpg'),
+     (9, 'Huevos camperos', 'huevos camperos pack 12 unidades', 2.95, '2025-12-22', 'FRESCOS', '/images/huevos.jpg'),
+     (10, 'Agua mineral', 'agua mineral natural botella 1.5L', 0.75, '2027-05-10', 'BEBIDAS', '/images/agua.jpg'),
+     (11, 'Papel higiénico', 'papel higiénico doble capa pack 12', 4.10, null, 'HOGAR', '/images/papel higiénico.jpg'),
+     (12, 'Champú anticaspa', 'champú anticaspa marca DIA 400ml', 3.40, null, 'CUIDADO_PERSONAL', '/images/champu anticaspa.jpg'),
+     (13, 'Pollo entero', 'pollo fresco entero preparado', 6.80, '2025-12-14', 'FRESCOS', '/images/pollo entero.jpg'),
+     (14, 'Pizza congelada', 'pizza congelada jamón y queso', 2.95, '2026-03-01', 'CONGELADOS', '/images/pizza.jpg'),
+     (15, 'Helado de vainilla', 'helado de vainilla tarrina 1L', 3.20, '2026-06-20', 'CONGELADOS', '/images/helado de vainilla.jpg'),
+     (16, 'Cacao soluble', 'cacao soluble en polvo 500g', 3.50, '2027-02-10', 'DESPENSA', '/images/cacao soluble.jpg'),
+     (17, 'Galletas María', 'galletas María clásicas pack 3', 1.20, '2027-01-10', 'DESPENSA', '/images/galletas.jpg'),
+     (18, 'Cerveza rubia', 'cerveza rubia lata 33cl', 0.85, '2026-10-10', 'BEBIDAS', '/images/cerveza rubia.jpg'),
+     (19, 'Detergente líquido', 'detergente ropa marsella', 7.90, null, 'HOGAR', '/images/detergente liquido.jpg'),
+     (20, 'Gel corporal', 'gel corporal leche de coco', 2.95, null, 'CUIDADO_PERSONAL', '/images/gel corporal.jpg');
 
 INSERT INTO stock_producto(id, stock_total, stock_minimo, stock_almacen, stock_expuesto, producto_id) VALUES
     (1, 120, 20, 80, 40, 1),   -- Manzana
