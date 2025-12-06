@@ -1,0 +1,174 @@
+/* ================================
+   ESTILOS PANTALLA EMPLEADOS (FULL WIDTH)
+   ================================ */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.empleados-root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  background: #ffffff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.empleados-root .empleados-header {
+  width: 100%;
+  margin-bottom: 18px;
+
+  display: flex;                /* ← coloca flecha y título en fila */
+  align-items: center;          /* ← verticalmente centrado */
+  gap: 12px;                    /* separación entre flecha y texto */
+}
+
+.empleados-back-btn {
+  font-size: 2.4rem;            /* flecha grande */
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #213547;
+  padding: 0;
+}
+
+.empleados-back-btn:hover {
+  color: #1a2f44;
+}
+
+.empleados-root .empleados-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: rgb(33, 53, 71);
+
+  flex: 1;                      /* ← esto empuja el texto y mantiene la línea */
+}
+
+/* LISTA FULL WIDTH */
+.empleados-root .empleados-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  gap: 18px;
+}
+
+/* Tarjeta de empleado */
+.empleados-root .empleado-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  gap: 20px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 2px rgba(15,23,42,0.03);
+  box-sizing: border-box;
+}
+
+/* ================================
+   AVATAR → TAMAÑO GRANDE (80px)
+   ================================ */
+.empleados-root .empleado-avatar {
+  flex-shrink: 0;
+  width: 80px;      /* ← antes 56 */
+  height: 80px;     /* ← antes 56 */
+  border-radius: 9999px;
+  background: #e6e9ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem; /* letra proporcional al tamaño mayor */
+  font-weight: 700;
+  color: #213547;
+}
+
+/* Info */
+.empleados-root .empleado-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.empleados-root .empleado-nombre {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #213547;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empleados-root .empleado-sub {
+  font-size: 0.875rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================================
+   BOTÓN VER → MÁS ANCHO
+   ================================ */
+.empleados-root .empleado-actions {
+  margin-left: 8px;
+}
+
+.empleados-root .empleado-btn {
+  padding: 10px 22px;        /* ← más ancho */
+  border-radius: 9999px;
+  background: #dcfce7;
+  color: #166534;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;          /* ← más grande */
+  font-weight: 600;
+  min-width: 120px;         /* ← botón mucho más ancho */
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.empleados-root .empleado-btn:hover {
+  background: #bbf7d0;
+}
+
+/* Footer */
+/* Footer → botón full width */
+.empleados-root .empleados-footer {
+  margin-top: 28px;
+  width: 100%;
+}
+
+.empleados-root .add-btn {
+  width: 100%;                 /* ← ahora ocupa todo el ancho */
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: #e0f2fe;
+  border: 1px solid rgba(2,6,23,0.06);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.empleados-root .add-btn:hover {
+  background: #bae6fd;
+}
