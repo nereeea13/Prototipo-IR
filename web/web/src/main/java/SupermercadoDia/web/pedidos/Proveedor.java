@@ -4,7 +4,12 @@ import java.time.LocalDate;
 
 import SupermercadoDia.web.model.BaseEntity;
 import SupermercadoDia.web.model.Person;
+import lombok.Getter;
+import lombok.Setter;
 
+
+@Getter
+@Setter
 public class Proveedor extends Person {
 
     private Integer telefono;
