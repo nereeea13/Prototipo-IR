@@ -80,3 +80,22 @@ VALUES
 
 
 
+-- Pedidos de mercancía EN REVISION
+INSERT INTO pedidos_mercancia (id, fecha_creacion, fecha_llegada, estado) VALUES
+    (6, '2025-12-15', null, 'EN_REVISION'),
+    (7, '2025-12-22', null, 'EN_REVISION'),
+    (8, '2025-12-29', null, 'EN_REVISION');
+
+
+-- Pedidos de mercancía EN PREPARACION, EN ENTREGA y ENTREGADO
+INSERT INTO pedidos_mercancia (id, fecha_creacion, fecha_llegada, estado) VALUES
+    (1, '2025-12-01', '2025-12-06', 'ENTREGADO'),
+    (2, '2025-12-03', '2025-12-10', 'ENTREGADO'),
+    (3, '2025-12-05', null, 'EN_ENTREGA'),
+    (4, '2025-12-13', null, 'EN_PREPARACION'),
+    (5, '2025-12-09', null, 'EN_PREPARACION');
+   
+
+
+INSERT INTO transportistas_camion (id, nombre, apellidos, telefono, empresa) VALUES
+    (1, 'Luis', 'Fernández Gómez', '656758426', 'Empresa XYZ');
