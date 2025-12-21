@@ -58,7 +58,7 @@ export default function RegistrarIncidencia() {
 
       if (!res.ok) throw new Error();
       alert("Incidencia registrada correctamente");
-      navigate(-1);
+      navigate("/pedidos-en-entrega");
     } catch {
       setError("Error registrando incidencia");
     }

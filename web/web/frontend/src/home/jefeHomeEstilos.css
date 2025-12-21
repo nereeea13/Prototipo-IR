@@ -9,6 +9,10 @@
   box-sizing: border-box !important;
   position: relative !important;
   left: 0 !important;
+    /* espacio extra abajo para evitar que el último botón quede tapado
+      por barras del sistema (taskbar / home indicator) */
+    padding-bottom: 8rem;
+    padding-bottom: calc(8rem + env(safe-area-inset-bottom));
 }
 
 /* ===== Contenedor de botones ===== */
@@ -21,6 +25,7 @@
   gap: 2rem;
   width: 100%;
   margin-top: 1rem;
+  margin-bottom: calc(2.5rem + env(safe-area-inset-bottom)); /* evita solapamiento con barras */
 }
 
 /* ===== Botón principal ===== */

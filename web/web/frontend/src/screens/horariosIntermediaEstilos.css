@@ -9,6 +9,11 @@
   box-sizing: border-box !important;
   position: relative !important;
   left: 0 !important;
+  display: flex; /* centrar contenido */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 2rem); /* ocupa casi toda la pantalla para centrar verticalmente */
 }
 
 
@@ -40,7 +45,7 @@
   justify-content: center;
   gap: 2rem;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0; /* margin no necesario cuando está centrado */
 }
 
 /* ===== Botón principal ===== */

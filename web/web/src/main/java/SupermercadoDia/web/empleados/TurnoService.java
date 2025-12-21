@@ -3,6 +3,12 @@ package SupermercadoDia.web.empleados;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.Collections;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Optional;
+
+import SupermercadoDia.web.enumerados.TipoTurno;
+import SupermercadoDia.web.enumerados.EstadoTurno;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,5 +74,35 @@ public class TurnoService {
                     Collections.shuffle(turnos);
                     return turnos.stream().limit(count).map(TurnoDTO::new).collect(Collectors.toList());
                 }).orElseGet(Collections::emptyList);
+    }
+
+    public TurnoDTO updateTurno(Integer turnoId, TurnoUpdateDTO dto) {
+        Optional<Turno> opt = turnoRepositorio.findById(turnoId);
+        if (opt.isEmpty()) throw new IllegalArgumentException("Turno not found");
+        Turno turno = opt.get();
+
+        if (dto.getFecha() != null && !dto.getFecha().isBlank()) {
+            turno.setFecha(LocalDate.parse(dto.getFecha()));
+        }
+        if (dto.getHoraInicio() != null && !dto.getHoraInicio().isBlank()) {
+            turno.setHoraInicio(LocalTime.parse(dto.getHoraInicio()));
+        }
+        if (dto.getHoraFin() != null && !dto.getHoraFin().isBlank()) {
+            turno.setHoraFin(LocalTime.parse(dto.getHoraFin()));
+        }
+        if (dto.getTipo() != null && !dto.getTipo().isBlank()) {
+            turno.setTipo(TipoTurno.valueOf(dto.getTipo()));
+        }
+        if (dto.getEstado() != null && !dto.getEstado().isBlank()) {
+            turno.setEstado(EstadoTurno.valueOf(dto.getEstado()));
+        }
+        if (dto.getEmpleadoId() != null) {
+            var empOpt = empleadoRepository.findById(dto.getEmpleadoId());
+            if (empOpt.isEmpty()) throw new IllegalArgumentException("Empleado not found");
+            turno.setEmpleado(empOpt.get());
+        }
+
+        turnoRepositorio.save(turno);
+        return new TurnoDTO(turno);
     }
 }

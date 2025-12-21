@@ -7,6 +7,7 @@
   max-width: none !important;
   margin: 0 !important;
   padding: 1rem !important;
+  padding-top: 68px !important; /* espacio para header fijo */
   box-sizing: border-box !important;
   position: relative !important;
   left: calc(50% - 50vw) !important;
@@ -22,22 +23,30 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #fd7a7a;
+  background-color: rgb(255, 229, 229);
   border-bottom: 2px solid #000;
   padding: 0.75rem 1rem;
   margin-bottom: 0.75rem;
+  /* make header touch top of viewport and span full width */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .inv-header h2 {
   margin: 0;
-  color: #ffffff;
+  color: rgb(202, 0, 0);
   font-size: 1.25rem;
 }
 
 .inv-back {
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: rgb(202, 0, 0);
   font-size: 2.2rem;
   cursor: pointer;
   padding: 6px 8px;
@@ -51,7 +60,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 0.75rem 0 1.25rem;
+  margin: 1.75rem 0 1.25rem; /* más espacio entre el header fijo y los controles */
   flex-wrap: wrap;
 }
 
@@ -101,10 +110,10 @@
   gap: 1rem;
   align-items: center;
   padding: 0.7rem;
-  background: #fff9f9;
+  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  border: 2px solid #fd7a7a;
+  border: 2px solid rgb(202, 0, 0);
 }
 
 .inv-img {

@@ -27,6 +27,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: bold;
+  color: rgb(202, 0, 0);
 }
 
 .reg-inc-back {
@@ -190,11 +191,11 @@
 .reg-inc-submit {
   background: #88ff6b;
   color: #006d21;
-  border: 2px solid #000;
+  border: 2px solid #005700;
 }
 
 .reg-inc-submit:hover {
-  background: #222;
+  background: #8bff8b;
 }
 
 /* =========================

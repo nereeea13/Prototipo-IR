@@ -25,6 +25,7 @@
   margin: 0;
   font-size: 30px;
   font-weight: bold;
+  color: rgb(202, 0, 0);
 }
 
 /* ===== BOTÓN VOLVER ===== */
@@ -36,6 +37,7 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 6px;
+  color: rgb(202, 0, 0);
 }
 
 .back-btn:hover {

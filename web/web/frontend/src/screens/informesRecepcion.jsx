@@ -14,7 +14,7 @@ export default function InformesRecepcion() {
 
       {/* HEADER */}
       <header className="infrec-header">
-        <button className="infrec-back" onClick={() => navigate(-1)}>
+        <button className="infrec-back" onClick={() => navigate("/pedidos-mercancia")}>
           <ArrowLeft size={28} />
         </button>
         <h2>Informes de recepción</h2>
