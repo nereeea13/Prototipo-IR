@@ -28,7 +28,7 @@ function Login() {
     localStorage.setItem("role", data.role);
     localStorage.setItem("userId", data.id);
     localStorage.setItem("username", data.username);
-
+    localStorage.setItem("empleadoId", data.empleadoId);
 
 
     if (data.role === "JEFE") navigate("/jefe");
