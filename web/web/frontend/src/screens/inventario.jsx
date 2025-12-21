@@ -19,79 +19,94 @@ function stockState(qty) {
 }
 
 export default function InventarioTienda() {
-  // const BACKEND_URL = "http://localhost:8080"; // URL de tu Spring Boot
   const navigate = useNavigate();
+
   const [productos, setProductos] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log('productos', productos);
-  console.log('categoriaSeleccionada', categoriaSeleccionada);
+  // modal
+  const [productoEditando, setProductoEditando] = useState(null);
+  const [nuevaCantidad, setNuevaCantidad] = useState("");
+  const [motivo, setMotivo] = useState("");
 
-  // fetch helper: si category = "" hace GET /api/productos, si no GET /api/productos/categoria/{categoria}
+  /* =========================
+     FETCH PRODUCTOS
+     ========================= */
   const fetchProductos = async (categoria = "") => {
     setLoading(true);
     setError(null);
+
     try {
       const url = categoria
         ? `/api/productos/categoria/${encodeURIComponent(categoria)}`
         : `/api/productos`;
-      const res = await fetch(url, {
-        headers: { "Accept": "application/json" },
-      });
-      if (!res.ok) {
-        throw new Error(`Error al recuperar productos: ${res.status}`);
-      }
+
+      const res = await fetch(url, { headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error("Error al cargar productos");
+
       const data = await res.json();
-      // El backend devuelve la entidad Producto; necesitamos nombre, imagen (si existe) y cantidad.
-      // Asumimos que tu Producto tiene al menos: id, nombre, fechaCaducidad, categoria, precio.
-      // Si tu API no devuelve "cantidad" (stock), hay que integrar con endpoint de stock. 
-      // Aquí suponemos que producto.cantidad existe para mostrar ejemplo; si no, mostramos 0.
-  
       setProductos(Array.isArray(data.productos) ? data.productos : []);
     } catch (err) {
-      console.error(err);
-      setError(err.message || "Error desconocido");
+      setError(err.message);
       setProductos([]);
     } finally {
       setLoading(false);
     }
   };
 
-  // carga inicial
   useEffect(() => {
     fetchProductos();
   }, []);
 
-  // cuando cambia categoría
   useEffect(() => {
     fetchProductos(categoriaSeleccionada);
   }, [categoriaSeleccionada]);
 
+  /* =========================
+     PUT ACTUALIZAR STOCK
+     ========================= */
+  const guardarCambios = async () => {
+    if (!productoEditando) return;
 
-  // SI NO CARGA LAS FOTOS: PONER src={`${BACKEND_URL}${p.foto}`}
+    try {
+      const res = await fetch(
+        `/api/productos/${productoEditando.id}/stock`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            stockTotal: Number(nuevaCantidad),
+          }),
+        }
+      );
+
+      if (!res.ok) throw new Error("No se pudo actualizar el stock");
+
+      await fetchProductos(categoriaSeleccionada);
+
+      setProductoEditando(null);
+      setNuevaCantidad("");
+      setMotivo("");
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+  /* =========================
+     RENDER
+     ========================= */
   return (
-    <div
-      className="inv-page"
-      style={{
-        width: "100vw",
-        maxWidth: "none",
-        margin: 0,
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-        boxSizing: "border-box",
-        position: "relative",
-        left: "calc(50% - 50vw)",
-      }}
-    >
+    <div className="inv-page">
+
+      {/* HEADER */}
       <header className="inv-header">
-        <button className="inv-back" onClick={() => navigate(-1)}>
-          &larr;
-        </button>
+        <button className="inv-back" onClick={() => navigate(-1)}>←</button>
         <h2>Inventario de la tienda</h2>
       </header>
 
+      {/* CONTROLES */}
       <div className="inv-controls">
         <select
           className="inv-select"
@@ -106,54 +121,47 @@ export default function InventarioTienda() {
         </select>
 
         <div className="inv-actions">
-          <button className="btn-filter" onClick={() => alert("Abrir filtros (pendiente)")}>
-            Filtros
-          </button>
-          <button className="btn-sort" onClick={() => alert("Ordenar (pendiente)")}>
-            Ordenar por...
-          </button>
+          <button className="btn-filter">Filtros</button>
+          <button className="btn-sort">Ordenar por...</button>
         </div>
       </div>
 
       {loading && <p>Cargando productos...</p>}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {error && <p className="error">{error}</p>}
 
-      <ul className="inv-list" aria-live="polite">
+      {/* LISTA */}
+      <ul className="inv-list">
         {productos.length === 0 && !loading ? (
-          <li style={{ padding: "1rem", textAlign: "center" }}>No hay productos para mostrar</li>
+          <li className="empty">No hay productos</li>
         ) : (
           productos.map((p) => {
-            const state = stockState(p.cantidad);
+            const state = stockState(p.cantidadTotal);
+
             return (
               <li className="inv-card" key={p.id}>
-                <img className="inv-img" src={p.foto} alt={p.nombre} /> 
+                <img className="inv-img" src={p.foto} alt={p.nombre} />
+
                 <div className="inv-content">
                   <div className="inv-title">{p.nombre}</div>
 
                   <div className="inv-meta">
-                    <span className="meta-label">Cantidad:</span>{" "}
-                    <span className="meta-value">{p.cantidadTotal} uds.</span>
+                    <span>Cantidad:</span> {p.cantidadTotal} uds.
                   </div>
 
                   <div className="inv-meta">
-                    <span className="meta-label">Estado stock:</span>{" "}
-                    <span className={`badge ${state.className}`}>{p.estadoStock}</span>
+                    Estado stock:
+                    <span className={`badge ${state.className}`}>
+                      {state.label}
+                    </span>
                   </div>
-
-                  {p.fechaCaducidad && (
-                    <div className="inv-meta">
-                      <span className="meta-label">Caduca:</span>{" "}
-                      <span className="meta-value">{p.fechaCaducidad}</span>
-                    </div>
-                  )}
 
                   <a
                     href="#"
                     className="inv-edit"
                     onClick={(e) => {
                       e.preventDefault();
-                      // aquí podrías abrir un modal con un formulario que llame PUT /stock o similar
-                      alert(`Editar cantidad de: ${p.nombre}`);
+                      setProductoEditando(p);
+                      setNuevaCantidad(p.cantidadTotal);
                     }}
                   >
                     Editar cantidad
@@ -164,6 +172,46 @@ export default function InventarioTienda() {
           })
         )}
       </ul>
+
+      {/* MODAL */}
+      {productoEditando && (
+        <div className="modal-overlay">
+          <div className="modal-card">
+
+            <h3>Editar cantidad</h3>
+
+            <input
+              type="number"
+              value={nuevaCantidad}
+              onChange={(e) => setNuevaCantidad(e.target.value)}
+            />
+
+            <p><strong>Motivo del cambio:</strong></p>
+
+            {["CADUCIDAD", "ROBO", "ROTURA", "OTRO"].map((m) => (
+              <label key={m}>
+                <input
+                  type="radio"
+                  name="motivo"
+                  value={m}
+                  onChange={(e) => setMotivo(e.target.value)}
+                />
+                {m.charAt(0) + m.slice(1).toLowerCase()}
+              </label>
+            ))}
+
+            <div className="modal-actions">
+              <button onClick={() => setProductoEditando(null)}>
+                Cancelar
+              </button>
+              <button onClick={guardarCambios}>
+                Guardar cambios
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
 
     </div>
   );

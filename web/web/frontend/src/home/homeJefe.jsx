@@ -30,7 +30,7 @@ return (
           Gestión de horarios 
         </button>
 
-        <button className="empleado-btn" onClick={() => navigate("/métricas")}>
+        <button className="empleado-btn" onClick={() => navigate("/metricas")}>
           <Calendar className="btn-icon" />
           Consultar métricas 
         </button>

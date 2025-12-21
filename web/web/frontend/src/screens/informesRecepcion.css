@@ -1,0 +1,108 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.infrec-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.infrec-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  border-bottom: 2px solid #000;
+}
+
+.infrec-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.infrec-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== LISTADO ===== */
+.infrec-lista {
+  flex: 1;
+  padding: 32px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.infrec-card {
+  width: 100%;
+  border: 2px solid #000;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* Icono */
+.infrec-icon {
+  font-size: 28px;
+}
+
+/* Texto */
+.infrec-info {
+  flex: 1;
+  font-size: 18px;
+}
+
+/* Botón ver */
+.infrec-ver-btn {
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: 2px solid #5cbf4a;
+  background: #caffbf;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.infrec-ver-btn:hover {
+  background: #5cbf4a;
+  color: #fff;
+}
+
+/* ===== FOOTER ===== */
+.infrec-footer {
+  padding: 24px 32px;
+  border-top: 2px solid #000;
+  display: flex;
+  justify-content: center;
+}
+
+.infrec-descargar-todo {
+  width: 100%;
+  max-width: 1200px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #e6f2ff;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.infrec-descargar-todo:hover {
+  background: #cfe3ff;
+}
+
+/* ===== RESET ===== */
+body {
+  margin: 0;
+}

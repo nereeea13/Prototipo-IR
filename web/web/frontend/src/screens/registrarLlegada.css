@@ -120,12 +120,93 @@
   background: #1cdd2c;
 }
 
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+/* ===== MODAL CARD ===== */
+.modal-confirmacion {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  padding: 32px 28px;
+  border-radius: 24px;
+  border: 4px solid #000;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* Texto */
+.modal-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* Botón visualizar */
+.modal-ver-btn {
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: 2px solid #4caf50;
+  background: #caffbf;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-ver-btn:hover {
+  background: #4caf50;
+  color: #fff;
+}
+
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
   .acciones {
     flex-direction: column;
   }
+
+/* Botones de estado en incidencia */
+.btn-roja,
+.btn-verde {
+  padding: 8px 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-roja {
+  background: #ff4d4d;
+  color: #fff;
+  border-color: #b30000;
+}
+
+.btn-roja:hover { background: #ff1a1a; }
+
+.btn-verde {
+  background: #4caf50;
+  color: #fff;
+  border-color: #1b5e20;
+}
+
+.btn-verde:hover { background: #388e3c; }
+
+.btn-roja.active,
+.btn-verde.active {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.08) inset, 0 2px 6px rgba(0,0,0,0.12);
+}
+
 
   .btn-secundario,
   .btn-primario {

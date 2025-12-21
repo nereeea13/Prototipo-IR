@@ -1,0 +1,95 @@
+.editar-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+.editar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 2px solid #000;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+
+.add-btn {
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+.editar-lista {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.editar-card {
+  display: flex;
+  gap: 12px;
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.editar-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.editar-info p {
+  margin: 4px 0;
+}
+
+.cantidad-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cantidad-row input {
+  width: 50px;
+  text-align: center;
+}
+
+.editar-acciones {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-top: 2px solid #000;
+}
+
+.btn-cancelar,
+.btn-guardar {
+  flex: 1;
+  padding: 10px 0;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.btn-guardar {
+  background: #e6e6e6;
+}

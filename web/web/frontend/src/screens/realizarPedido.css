@@ -120,6 +120,63 @@
   background: #1cdd2c;
 }
 
+/* ===== AÑADIR PRODUCTO (CENTRADO Y COMPACTO) ===== */
+
+.add-product-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 28px;
+}
+
+.add-product-card {
+  width: 100%;
+  max-width: 700px;          /* ⬅️ más ancho */
+  border: 2px solid #000;
+  padding: 12px 16px;        /* ⬅️ menos “gordo” */
+  display: grid;
+  grid-template-columns: 1fr 120px auto;
+  gap: 12px;
+  align-items: center;
+  background: #ffffff;
+}
+
+.add-product-card h3 {
+  grid-column: 1 / -1;
+  margin: 0 0 6px;
+  font-size: 16px;           /* ⬅️ más pequeño */
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Selector producto */
+.add-product-card select {
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+/* Cantidad */
+.add-product-card input {
+  padding: 6px 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Botón */
+.add-product-card button {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #000;
+}
+
+.add-product-card button:hover {
+  background: #000;
+  color: #fff;
+}
+
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
