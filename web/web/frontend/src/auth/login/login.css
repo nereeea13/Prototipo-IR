@@ -9,9 +9,10 @@ body {
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  margin-left: 820px;
-  
-
+  width: 100vw;
+  min-height: 100vh; /* full viewport height to center vertically */
+  margin: 0;
+  padding: 0;
 }
 
 /* Tarjeta */

@@ -14,7 +14,8 @@ export default function EditarEmpleado({ apiBase = "/api/empleados" }) {
     email: "",
     contratoHorasSemanales: "",
     preferenciaTurno: "",
-    rol: ""
+    rol: "",
+    foto: ""
   });
 
   const [loading, setLoading] = useState(true);
@@ -33,7 +34,8 @@ export default function EditarEmpleado({ apiBase = "/api/empleados" }) {
           email: data.email || "",
           contratoHorasSemanales: data.contratoHorasSemanales || "",
           preferenciaTurno: data.preferenciaTurno || "",
-          rol: data.rol || ""
+          rol: data.rol || "",
+          foto: data.foto || ""
         });
         setLoading(false);
       });
