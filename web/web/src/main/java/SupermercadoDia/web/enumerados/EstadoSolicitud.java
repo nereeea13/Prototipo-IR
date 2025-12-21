@@ -1,6 +1,7 @@
+
 package SupermercadoDia.web.enumerados;
 
-public enum EstadoSolicitudCambioTurno {
+public enum EstadoSolicitud {
 
     PENDIENTE, ACEPTADA, RECHAZADA;
     
