@@ -31,7 +31,7 @@ public class SolicitudService {
         solicitudes.addAll(solicitudesPendientesAnuncio);
         solicitudes.addAll(solicitudesAnunciadas);  
         solicitudes.addAll(solicitudesPendientesCierre);
-        
+
         return solicitudes;
     
     }
@@ -39,6 +39,10 @@ public class SolicitudService {
 
     public Solicitud obtenerSolicitudPorId(Integer id) {
         return solicitudRepository.findById(id).orElse(null);
+    }
+
+    public List<Solicitud> obtenerSolicitudesPorEstado(EstadoSolicitud estado) {
+        return solicitudRepository.findByEstado(estado);
     }
 
 

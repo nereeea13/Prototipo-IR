@@ -51,6 +51,27 @@ export default function SolicitudesCambiosJefe() {
         }
     };
 
+    const aceptarEmpleado = async (solicitud) => {
+        try {
+            console.log("Aplicando solicitud:", solicitud);
+            const response = await fetch(`/api/solicitudes/${solicitud.id}/aceptarEmpleado`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify( solicitud),
+            });
+            
+            if (!response.ok) {
+                throw new Error('Error al aceptar empleado');
+            }
+            
+            cargarSolicitudes();
+        } catch (err) {
+            setError(err.message);
+        }
+    };
+
     if (loading) return <div>Cargando solicitudes...</div>;
     if (error) return <div>Error: {error}</div>;
 
@@ -70,12 +91,20 @@ export default function SolicitudesCambiosJefe() {
                             <p><strong>Motivo:</strong> {solicitud.motivo}</p>
                             <p><strong>Fecha:</strong> {solicitud.fecha}</p>
                             <p><strong>Horario:</strong> {solicitud.horario}</p>
-                            <p><strong>Estado:</strong> {solicitud.estado}</p>
+                            <p><strong>Estado:</strong> <span style={{ color: 'red' }}>{solicitud.estado}</span></p>
                         </div>
                         {solicitud.estado === 'PENDIENTE_DE_ANUNCIO' && (
                             <button onClick={() => anunciarSolicitud(solicitud)} style={{ backgroundColor: 'red', color: 'white', border: 'none', padding: '10px 15px', cursor: 'pointer' }}>
                                 Anunciar
                             </button>
+                        )}
+                        {solicitud.empleadoAplicadoId && solicitud.estado !== 'PENDIENTE_DE_CIERRE' && (
+                            <div>
+                                <p>Aplicada por empleado ID: {solicitud.empleadoAplicadoId}</p>
+                                <button onClick={() => aceptarEmpleado(solicitud)} style={{ backgroundColor: 'green', color: 'white', border: 'none', padding: '10px 15px', cursor: 'pointer' }}>
+                                    Aceptar empleado para cambio
+                                </button>
+                            </div>
                         )}
                     </div>
                 ))}

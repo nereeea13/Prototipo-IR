@@ -10,7 +10,7 @@ export default function LogoutButton() {
 
   return (
     <button 
-      style={{ backgroundColor: "red", color: "white", padding: "10px", borderRadius: "5px" }}
+      style={{ backgroundColor: "red", color: "white", padding: "10px", borderRadius: "5px", paddingTop: "8px", paddingBottom: "8px", marginTop: "20px", width: "200px", fontSize: "25px" }}
       onClick={handleLogout}
     >
       Cerrar sesión

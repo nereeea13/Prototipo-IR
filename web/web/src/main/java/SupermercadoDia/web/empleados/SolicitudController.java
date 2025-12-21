@@ -51,4 +51,33 @@ public class SolicitudController {
         Solicitud solicitudActualizada = solicitudService.guardarSolicitud(solicitud);
         return ResponseEntity.ok(new SolicitudDTO(solicitudActualizada));
     }
+
+    @GetMapping("/anunciadas")
+    public ResponseEntity<List<SolicitudDTO>> obtenerSolicitudesAnunciadas() {
+        List<Solicitud> solicitudes = solicitudService.obtenerSolicitudesPorEstado(EstadoSolicitud.ANUNCIADA);
+        List<SolicitudDTO> solicitudesDTO = solicitudes.stream()
+            .map(SolicitudDTO::new)
+            .collect(Collectors.toList());
+        return ResponseEntity.ok(solicitudesDTO);
+    }
+
+    @PostMapping("/aplicar")
+    public ResponseEntity<SolicitudDTO> aplicarSolicitud(@RequestBody SolicitudDTO solicitud) {
+        Empleado empleadoAplicado = empleadoService.getEmpleadoPorId(solicitud.getEmpleadoAplicadoId());
+        Solicitud s = solicitudService.obtenerSolicitudPorId(solicitud.getId());
+        s.setEmpleadoAplicado(empleadoAplicado);
+        Solicitud solicitudActualizada = solicitudService.guardarSolicitud(s);
+        return ResponseEntity.ok(new SolicitudDTO(solicitudActualizada));
+    }
+
+    @PostMapping("/{id}/aceptarEmpleado")
+    public ResponseEntity<SolicitudDTO> cambiarEmpleadoAplicadoYEstado(@PathVariable Integer id, @RequestBody SolicitudDTO solicitud) {
+        Empleado empleadoAplicado = empleadoService.getEmpleadoPorId(solicitud.getEmpleadoAplicadoId());
+        Solicitud s = solicitudService.obtenerSolicitudPorId(id);
+        s.setEmpleadoAplicado(empleadoAplicado);
+        s.setEstado(EstadoSolicitud.PENDIENTE_DE_CIERRE);
+        Solicitud solicitudActualizada = solicitudService.guardarSolicitud(s);
+        return ResponseEntity.ok(new SolicitudDTO(solicitudActualizada));
+    }
+    
 }

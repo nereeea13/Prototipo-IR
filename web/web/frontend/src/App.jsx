@@ -28,6 +28,8 @@ import InformeEmple from "./screens/informesEmpleado";
 import GenerarHorario from "./screens/generarHorario";
 import VisualizarTurnos from "./screens/visualizarTurnos";
 import SolicitudesCambiosJefe from "./screens/solicitudesCambiosJefe";
+import SolicitudesCambioEmpleados from "./screens/solicitudesCambioEmpleados";
+
 
 
 function App() {
@@ -107,6 +109,8 @@ function App() {
 
         <Route path="/generar-horario" element={<GenerarHorario />} />
         <Route path="/turnos" element={<VisualizarTurnos />} />
+
+        <Route path="/solicitudes-cambio-empleados" element={<SolicitudesCambioEmpleados />} />
 
 
       </Routes>
