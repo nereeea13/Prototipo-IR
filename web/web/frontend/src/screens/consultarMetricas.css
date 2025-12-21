@@ -1,0 +1,99 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+.metricas-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+
+.metricas-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  border-bottom: 2px solid #000;
+  width: 100%;
+}
+
+.metricas-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== LISTA ===== */
+
+.metricas-lista {
+  flex: 1;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* centra el contenido en desktop */
+}
+
+/* ===== CARD ===== */
+
+.metrica-card {
+  width: 100%;
+  border: 2px solid #000;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.metrica-card:hover {
+  background: #f5f5f5;
+}
+
+/* ===== FOOTER ===== */
+
+.metricas-footer {
+  width: 100%;
+  padding: 24px 32px;
+  border-top: 2px solid #000;
+  display: flex;
+  justify-content: center;
+}
+
+.descargar-todo-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #7fff6e;
+  border: 2px solid #002004;
+  cursor: pointer;
+}
+
+.descargar-todo-btn:hover {
+  background: #06cf28;
+  color: #fff;
+}
+
+/* ===== RESET ===== */
+
+body {
+  margin: 0;
+}

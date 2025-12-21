@@ -1,0 +1,101 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+.localizacion-root {
+  box-sizing: border-box;
+  width: 100vw;                 /* ⬅️ ancho real de pantalla */
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;         /* ⬅️ MUY IMPORTANTE */
+}
+
+/* ===== HEADER ===== */
+
+.localizacion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.localizacion-header h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* ===== BOTÓN VOLVER ===== */
+
+.back-btn {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.back-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ===== IMAGEN ===== */
+
+.localizacion-image-wrap {
+  width: 100%;
+}
+
+.localizacion-image-wrap img {
+  width: 100%;                  /* ⬅️ ocupa todo el ancho */
+  height: auto;
+  border-radius: 0;             /* ⬅️ look pantalla completa */
+  object-fit: cover;
+  box-shadow: none;             /* ⬅️ opcional */
+}
+
+
+/* Footer fijo abajo */
+.informe-footer {
+  width: 100%;
+  margin-top: auto;          /* empuja el botón al final */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Botón descargar */
+.btn-descargar {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #3b82f6; /* azulito */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-descargar:hover {
+  background-color: #2563eb;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 640px) {
+  .localizacion-root {
+    padding: 8px;
+  }
+
+  .localizacion-image-wrap img {
+    border-radius: 0;
+  }
+}
+
+/* ===== RESET GLOBAL ===== */
+
+body {
+  margin: 0;
+}

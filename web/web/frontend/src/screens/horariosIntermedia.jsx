@@ -10,25 +10,44 @@ export default function HorariosIntermedia() {
 
    const navigate = useNavigate();
 
+   const handleGenerarHorario = async () => {
+     try {
+       await fetch('/api/horarios/cambiar', { method: 'POST' });
+     } catch (e) {
+       console.error('Error cambiando horario', e);
+     } finally {
+       navigate('/generar-horario');
+     }
+   };
+
 return (
     <div className="empleado-container">
-
-              {/* ==== Flecha de volver ==== */}
-      <button 
-        className="back-arrow"
+    <div className="empleado-header-bar">
+      <button
         onClick={() => navigate("/jefe")}
+        style={{
+          position: "fixed",
+          top: "20px",
+          left: "20px",
+          zIndex: 9999,
+          background: "transparent",
+          border: "none",
+          cursor: "pointer"
+        }}
         aria-label="Volver"
       >
-        <ArrowLeft size={40} />
+        <ArrowLeft size={48} color="red" strokeWidth={2.5} />
       </button>
 
+      </div>
+
       <div className="empleado-buttons">
-        <button className="empleado-btn" onClick={() => navigate("/generar-horario")}>
+        <button className="empleado-btn" onClick={handleGenerarHorario}>
           <ShoppingCart className="btn-icon" />
           Generar horario
         </button>
 
-        <button className="empleado-btn" onClick={() => navigate("/visualizar-turnos")}>
+        <button className="empleado-btn" onClick={() => navigate("/turnos")}>
           <BoxIcon className="btn-icon" />
           Visualizar turnos
         </button>

@@ -14,10 +14,19 @@ import EmpleadoDetalles from "./screens/empleadoDetalles";
 import EditarEmpleado from "./screens/editarEmpleado";
 import PedidosEnRevision from "./screens/pedidosEnRevision";
 import RealizarPedido from "./screens/realizarPedido";
+import EditarPedido from "./screens/editarPedido";
 import PedidosEnEntrega from "./screens/pedidosEnEntrega";
 import RegistarLlegada from "./screens/registrarLlegada";
+import RegistrarIncidencia from "./screens/registrarIncidencia";
 import PedidosRealizados from "./screens/pedidosRealizados";
 import Localizacion from "./screens/localizacion";
+import ConsultarMetricas from "./screens/metricas";
+import InformesRecepcion from "./screens/informesRecepcion";
+import InformeInventario from "./screens/informeInventario";
+import InformeLogis from "./screens/informesLogistica";
+import InformeEmple from "./screens/informesEmpleado";
+import GenerarHorario from "./screens/generarHorario";
+import VisualizarTurnos from "./screens/visualizarTurnos";
 
 
 function App() {
@@ -72,14 +81,29 @@ function App() {
         <Route path="/empleados/:id/editar" element={<EditarEmpleado />} />
 
         <Route path="/pedidos/:id/realizar" element={<RealizarPedido />} />
+        <Route path="/pedidos/:id/editar" element={<EditarPedido />} />
 
         <Route path="/pedidos-en-entrega" element={<PedidosEnEntrega />} />
 
         <Route path="/pedidos/:id/registrar-llegada" element={<RegistarLlegada />} />
+        <Route path="/pedidos/:id/incidencia" element={<RegistrarIncidencia />} />
 
         <Route path="/pedidos-realizados" element={<PedidosRealizados />} />
 
         <Route path="/pedidos/localizacion" element={<Localizacion />} />
+
+        <Route path="/metricas" element={<ConsultarMetricas />} />
+
+        <Route path="/informes-recepción" element={<InformesRecepcion />} />
+
+        <Route path="/metricas/inventario" element={<InformeInventario/>} />
+
+        <Route path="/metricas/eficiencia-logistica"element={<InformeLogis />}/>
+
+        <Route path="/metricas/cumplimiento-horarios" element={<InformeEmple />} />
+
+        <Route path="/generar-horario" element={<GenerarHorario />} />
+        <Route path="/turnos" element={<VisualizarTurnos />} />
 
 
       </Routes>

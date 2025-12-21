@@ -1,45 +1,52 @@
-/* Contenedor general */
-/* --- PARCHE: forzar full-width y neutralizar contenedores padres --- */
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
 .inv-page {
   width: 100vw !important;
   max-width: none !important;
   margin: 0 !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  padding: 1rem !important;
   box-sizing: border-box !important;
   position: relative !important;
-  left: calc(50% - 50vw) !important; /* centra el elemento en la ventana */
-  background: transparent; /* opcional: evita que el fondo del padre asome */
+  left: calc(50% - 50vw) !important;
+  background: transparent;
+  font-family: sans-serif;
 }
 
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-/* Header */
 .inv-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   background-color: #fd7a7a;
-  border-bottom: 2px solid #000000;
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #000;
+  padding: 0.75rem 1rem;
   margin-bottom: 0.75rem;
 }
+
 .inv-header h2 {
   margin: 0;
-  justify-content: center;
-  align-items: center;
   color: #ffffff;
   font-size: 1.25rem;
 }
+
 .inv-back {
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 2.25rem;
+  font-size: 2.2rem;
   cursor: pointer;
   padding: 6px 8px;
 }
 
-/* Controles (select + acciones) */
+/* =========================================================
+   CONTROLES
+   ========================================================= */
+
 .inv-controls {
   display: flex;
   align-items: center;
@@ -47,6 +54,7 @@
   margin: 0.75rem 0 1.25rem;
   flex-wrap: wrap;
 }
+
 .inv-select {
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
@@ -54,12 +62,15 @@
   background: #d4d4d4;
   min-width: 220px;
 }
+
 .inv-actions {
   margin-left: auto;
   display: flex;
   gap: 0.5rem;
 }
-.btn-filter, .btn-sort {
+
+.btn-filter,
+.btn-sort {
   background: transparent;
   border: 1px solid #cfe3ff;
   color: #2b7dd9;
@@ -68,7 +79,10 @@
   cursor: pointer;
 }
 
-/* Lista */
+/* =========================================================
+   LISTA DE PRODUCTOS
+   ========================================================= */
+
 .inv-list {
   list-style: none;
   padding: 0;
@@ -78,7 +92,10 @@
   gap: 0.75rem;
 }
 
-/* Tarjeta */
+/* =========================================================
+   TARJETA DE PRODUCTO
+   ========================================================= */
+
 .inv-card {
   display: flex;
   gap: 1rem;
@@ -86,9 +103,10 @@
   padding: 0.7rem;
   background: #fff9f9;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   border: 2px solid #fd7a7a;
 }
+
 .inv-img {
   width: 72px;
   height: 72px;
@@ -97,32 +115,42 @@
   flex-shrink: 0;
   border: 1px solid #eee;
 }
+
 .inv-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
+
 .inv-title {
   font-weight: 600;
   font-size: 1.05rem;
   color: #111827;
 }
 
-/* Meta (cantidad, estado) */
+/* =========================================================
+   META INFO
+   ========================================================= */
+
 .inv-meta {
   font-size: 0.92rem;
   color: #333;
 }
+
 .meta-label {
   color: #666;
   margin-right: 0.4rem;
 }
+
 .meta-value {
   font-weight: 600;
 }
 
-/* Badges */
+/* =========================================================
+   BADGES
+   ========================================================= */
+
 .badge {
   font-size: 0.75rem;
   padding: 0.18rem 0.45rem;
@@ -130,23 +158,29 @@
   font-weight: 700;
   display: inline-block;
 }
+
 .badge--low {
   background: #fff0f0;
   color: #d23;
   border: 1px solid #f5c8c8;
 }
+
 .badge--normal {
   background: #f0fff4;
   color: #1a8a3a;
   border: 1px solid #cfeccc;
 }
+
 .badge--over {
   background: #fff9ec;
   color: #a86d00;
   border: 1px solid #f3e0b8;
 }
 
-/* Edit link */
+/* =========================================================
+   LINK EDITAR
+   ========================================================= */
+
 .inv-edit {
   color: #1f7be6;
   font-weight: 700;
@@ -155,28 +189,190 @@
   margin-top: 6px;
   align-self: flex-start;
 }
-.inv-edit:hover { text-decoration: underline; }
 
-/* FAB (botón flotante) */
-.inv-fab {
+.inv-edit:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.modal-overlay {
   position: fixed;
-  right: 18px;
-  bottom: 80px; /* arriba del bottom menu */
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  background: #0ea5a1;
-  color: #fff;
-  font-size: 1.3rem;
-  border: none;
-  box-shadow: 0 8px 22px rgba(14,165,161,0.25);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* =========================================================
+   MODAL CARD
+   ========================================================= */
+
+.modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 360px;
+  padding: 24px 22px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* =========================================================
+   MODAL TÍTULO
+   ========================================================= */
+
+.modal-card h3 {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #255dd4;
+}
+
+/* =========================================================
+   INPUT CANTIDAD (CENTRADO REAL)
+   ========================================================= */
+
+.cantidad-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.cantidad-wrapper input[type="number"] {
+  width: 140px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #2758b9;
+  outline: none;
+}
+
+.cantidad-wrapper input[type="number"]:focus {
+  border-color: #fd7a7a;
+}
+
+/* Ocultar flechas */
+.cantidad-wrapper input[type="number"]::-webkit-inner-spin-button,
+.cantidad-wrapper input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cantidad-wrapper input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* =========================================================
+   MOTIVO (ESTÉTICO)
+   ========================================================= */
+
+.modal-card .motivo-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.modal-card label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 8px;
   cursor: pointer;
 }
 
-/* Responsive: en móvil reduce padding y tamaño imagen */
+.modal-card input[type="radio"] {
+  accent-color: #fd7a7a;
+}
+
+/* =========================================================
+   BOTONES MODAL
+   ========================================================= */
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Cancelar */
+.btn-cancel {
+  background: #ff9191;
+  color: #960000;
+}
+
+.btn-cancel:hover {
+  background: #e5e7eb;
+}
+
+/* Guardar */
+.btn-save {
+  background: #abff9b;
+  color: #084600;
+}
+
+.btn-save:hover {
+  background: #f95454;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 640px) {
-  .inv-page { padding: 0.5rem; }
-  .inv-img { width: 60px; height: 60px; }
-  .inv-card { padding: 0.6rem; }
-  .inv-header h2 { font-size: 1.1rem; }
+  .inv-img {
+    width: 60px;
+    height: 60px;
+  }
+  .inv-card {
+    padding: 0.6rem;
+  }
+  .inv-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-card {
+    max-width: 92%;
+    padding: 20px;
+  }
 }

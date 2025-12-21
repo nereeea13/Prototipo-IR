@@ -13,6 +13,8 @@ public interface EmpleadoRepository extends CrudRepository<Empleado, Integer>  {
 
     List<Empleado> findAll();
 
+    java.util.Optional<Empleado> findByNombre(String nombre);
+
 
     
 }

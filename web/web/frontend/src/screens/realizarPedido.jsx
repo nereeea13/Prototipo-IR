@@ -75,7 +75,7 @@ useEffect(() => {
 
       {/* BOTONES */}
       <div className="acciones">
-        <button className="btn-secundario">Editar pedido</button>
+        <button className="btn-secundario" onClick={() => navigate(`/pedidos/${id}/editar`)}>Editar pedido</button>
         <button
           className="btn-primario"
           onClick={handleConfirmarPedido}

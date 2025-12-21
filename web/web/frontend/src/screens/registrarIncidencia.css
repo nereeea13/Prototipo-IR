@@ -1,0 +1,229 @@
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.reg-inc-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.reg-inc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffd9d9;
+  padding: 14px 16px;
+  border-bottom: 2px solid #000;
+}
+
+.reg-inc-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.reg-inc-back {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* =========================
+   LISTADO
+========================= */
+
+.reg-inc-lista {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   TARJETA PRODUCTO
+========================= */
+
+.reg-inc-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.reg-inc-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.reg-inc-info {
+  flex: 1;
+}
+
+.reg-inc-info p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* =========================
+   ACCIONES POR LÍNEA
+========================= */
+
+.reg-inc-actions {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* =========================
+   BOTONES ESTADO
+========================= */
+
+.reg-btn-ok,
+.reg-btn-error {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* ✔ CORRECTO */
+.reg-btn-ok {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #34d399;
+}
+
+.reg-btn-ok:hover {
+  background: #d1fae5;
+}
+
+.reg-btn-ok.active {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #059669;
+}
+
+/* ❌ INCORRECTO */
+.reg-btn-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #f87171;
+}
+
+.reg-btn-error:hover {
+  background: #fee2e2;
+}
+
+.reg-btn-error.active {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+/* =========================
+   INCIDENCIA EXTRA
+========================= */
+
+.reg-inc-extra {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.reg-inc-extra input {
+  width: 80px;
+  margin-left: 6px;
+  padding: 4px;
+}
+
+.reg-inc-ok-msg {
+  margin-top: 6px;
+  color: #059669;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* =========================
+   ACCIONES FINALES
+========================= */
+
+.reg-inc-footer {
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  border-top: 2px solid #000;
+}
+
+.reg-inc-cancel,
+.reg-inc-submit {
+  flex: 1;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Cancelar */
+.reg-inc-cancel {
+  background: #ffdddd;
+  border: 2px solid #830000;
+}
+
+/* Generar */
+.reg-inc-submit {
+  background: #88ff6b;
+  color: #006d21;
+  border: 2px solid #000;
+}
+
+.reg-inc-submit:hover {
+  background: #222;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.reg-inc-error {
+  color: red;
+  padding: 12px;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 640px) {
+  .reg-inc-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reg-inc-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .reg-inc-actions {
+    align-items: center;
+  }
+}

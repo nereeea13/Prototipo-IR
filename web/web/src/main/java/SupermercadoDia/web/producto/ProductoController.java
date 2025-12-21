@@ -17,9 +17,11 @@ import SupermercadoDia.web.enumerados.CategoriaProducto;
 public class ProductoController {
 
     private final ProductoService productoService;
+    private final SupermercadoDia.web.tienda.StockProductoService stockProductoService;
 
-    public ProductoController(ProductoService productoService) {
+    public ProductoController(ProductoService productoService, SupermercadoDia.web.tienda.StockProductoService stockProductoService) {
         this.productoService = productoService;
+        this.stockProductoService = stockProductoService;
     }
 
     @GetMapping
@@ -63,6 +65,16 @@ public class ProductoController {
         producto.setId(id);
         Producto saved = productoService.saveProducto(producto);
         return ResponseEntity.ok(saved);
+    }
+
+    @PutMapping("/{id}/stock")
+    public ResponseEntity<?> updateProductoStock(@PathVariable Integer id, @RequestBody SupermercadoDia.web.tienda.StockUpdateDTO dto) {
+        if (dto == null || dto.getStockTotal() == null) {
+            return ResponseEntity.badRequest().body("stockTotal is required");
+        }
+        Integer nueva = dto.getStockTotal();
+        var updated = stockProductoService.updateStock(id, nueva);
+        return updated.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     
