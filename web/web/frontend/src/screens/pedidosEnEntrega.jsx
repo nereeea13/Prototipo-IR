@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import "./pedidosEnRevision.css";
+import "./pedidosEnEntrega.css";
 
 export default function PedidosEnEntrega() {
   const [pedidos, setPedidos] = useState([]);
@@ -27,7 +27,7 @@ export default function PedidosEnEntrega() {
 
       {/* HEADER */}
       <div className="pedidos-header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
+        <button className="back-btn" onClick={() => navigate("/pedidos-mercancia")}>
           <ArrowLeft size={28} />
         </button>
         <h2>Pedidos en entrega</h2>

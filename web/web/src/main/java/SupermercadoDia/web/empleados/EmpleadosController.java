@@ -67,4 +67,5 @@ public class EmpleadosController {
         return ResponseEntity.ok(new EmpleadoDTO(actualizado));
     }
 
+
 }

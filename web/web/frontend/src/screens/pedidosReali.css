@@ -1,10 +1,10 @@
 /* ===== CONTENEDOR PRINCIPAL ===== */
 
 .pedidos-container {
-  width: 100vw;              /* ⬅️ ocupa todo el ancho real */
+  width: 100%;                /* ✅ ancho real del viewport */
   min-height: 100vh;
   padding: 24px 32px;
-  box-sizing: border-box;
+  box-sizing: border-box;     /* ✅ padding incluido en el ancho */
   background: #ffffff;
   font-family: sans-serif;
 }
@@ -15,9 +15,9 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: #fcc1c1;
+  background-color: rgb(255, 229, 229);
   border-bottom: 2px solid #000;
-  padding-bottom: 12px;
+  padding: 12px 0;
   margin-bottom: 24px;
   width: 100%;
 }
@@ -39,13 +39,14 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-top: 102px; /* espacio entre header y primer pedido */
   width: 100%;
 }
 
 /* ===== CARD DE PEDIDO ===== */
 
 .pedido-card {
-  width: 100%;               /* ⬅️ ocupa todo el ancho */
+  width: 100%;                /* ✅ ocupa todo el ancho */
   border: 2px solid #000;
   padding: 20px 32px;
   display: flex;
@@ -65,26 +66,25 @@
 
 .realizar-btn {
   padding: 12px 20px;
-  background: #fff;
-  border: 2px solid #2b66ff;
-  color: #2b66ff;
+  background: #ffe7e7;
+  border: 2px solid #ce0000;
+  color: #ce0000;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .realizar-btn:hover {
-  background: #2b66ff;
+  background: #ff9d9d;
   color: #fff;
 }
-
 
 /* ===== ACCIONES ===== */
 
 .acciones {
   width: 100%;
   display: flex;
-  justify-content: center;      /* ⬅️ centra el bloque */
+  justify-content: center;
   gap: 32px;
   margin-top: 40px;
 }
@@ -92,9 +92,9 @@
 /* Botones ocupan ancho grande */
 .btn-secundario,
 .btn-primario {
-  flex: 1;                      /* ⬅️ ocupan todo el ancho */
-  max-width: 400px;             /* ⬅️ límite para pantallas grandes */
-  padding: 14px 0;
+  flex: 1;
+  max-width: 480px;           /* ⬅️ más ancho en desktop */
+  padding: 16px 0;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -120,9 +120,29 @@
   background: #f0f0f0;
 }
 
+/* ===== ESTADOS ===== */
+
+.estado {
+  font-weight: bold;
+}
+
+.estado-EN_PROCESO { color: #1e40af; }
+.estado-EN_PREPARACION { color: #ff3333; }
+.estado-EN_ENTREGA { color: #ffca39; }
+.estado-ENTREGADO { color: #52ff3b; }
+
+/* Mensaje cuando no está disponible la localización */
+.localizacion-no {
+  color: #d13434;
+  font-weight: bold;
+  margin: 0;
+  font-size: 14px;
+}
 
 /* ===== RESET IMPORTANTE ===== */
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
 }

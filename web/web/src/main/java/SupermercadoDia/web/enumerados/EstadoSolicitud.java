@@ -3,6 +3,6 @@ package SupermercadoDia.web.enumerados;
 
 public enum EstadoSolicitud {
 
-    PENDIENTE, ACEPTADA, RECHAZADA;
+    PENDIENTE_DE_ANUNCIO, ACEPTADA, RECHAZADA, ANUNCIADA, PENDIENTE_DE_CIERRE; 
     
 }

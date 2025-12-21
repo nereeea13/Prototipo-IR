@@ -1,8 +1,34 @@
+INSERT INTO empleados 
+(id, nombre, apellidos, dni, telefono, email, salario,
+ dias_vacaciones_verano_restantes, dias_vacaciones_invierno_restantes,
+ rol, contrato_horas_semanales, tipo_contrato, preferencia_turno, estado, foto)
+VALUES
+(1, 'Laura', 'García Pérez', '12345678A', '600111222', 'laura.garcia@super.com', 1200, 6, 4, 'CAJERO', 40, 'JORNADA_COMPLETA', 'MANANA', 'ACTIVO', '/images/avatar empleado.jpg'),
 
-INSERT INTO users(id,username,password,role) VALUES
-    (1,'jefe','jefe','JEFE'),
-    (2,'empleado1','empleado1','EMPLEADO'),
-    (3,'empleado2','empleado2','EMPLEADO');
+(2, 'Carlos', 'Santos Ruiz', '23456789B', '600222333', 'carlos.santos@super.com', 1100, 5, 3, 'REPONEDOR', 30, 'PARCIAL', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(3, 'María', 'Lopez Díaz', '34567890C', '600333444', 'maria.lopez@super.com', 1500, 7, 5, 'JEFE_TIENDA', 40, 'JORNADA_COMPLETA', 'INDIFERENTE', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(4, 'Javier', 'Torres Molina', '45678901D', '600444555', 'javier.torres@super.com', 1150, 4, 2, 'CAJERO', 20, 'PARCIAL', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(5, 'Andrea', 'Muñoz Vera', '56789012E', '600555666', 'andrea.munoz@super.com', 1250, 6, 3, 'REPONEDOR', 35, 'JORNADA_COMPLETA', 'MANANA', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(6, 'Pablo', 'Martín López', '67890123F', '600666777', 'pablo.martin@super.com', 1000, 4, 3, 'PESCADERO', 25, 'PARCIAL', 'MANANA', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(7, 'Sonia', 'Navarro Ruiz', '78901234G', '600777888', 'sonia.navarro@super.com', 1400, 7, 4, 'PANADERO', 40, 'JORNADA_COMPLETA', 'INDIFERENTE', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(8, 'Miguel', 'Herrera Soto', '89012345H', '600888999', 'miguel.herrera@super.com', 1600, 9, 5, 'CARNICERO', 40, 'JORNADA_COMPLETA', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg'),
+
+(9, 'Raquel', 'Dominguez Alba', '90123456I', '600999000', 'raquel.dominguez@super.com', 1300, 6, 3, 'CAJERO', 30, 'PARCIAL', 'MANANA', 'INACTIVO', '/images/avatar empleado.jpg'),
+
+(10, 'David', 'Serrano Cruz', '01234567J', '611222333', 'david.serrano@super.com', 1450, 6, 4, 'REPONEDOR', 37, 'JORNADA_COMPLETA', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg');
+
+
+
+INSERT INTO users(id,username,password,role, empleado_id) VALUES
+    (1,'jefe','jefe','JEFE', 3),
+    (2,'empleado1','empleado1','EMPLEADO', 1),
+    (3,'empleado2','empleado2','EMPLEADO', 2);
 
 
 INSERT INTO productos(id,nombre,descripcion,precio,fecha_caducidad, categoria, foto) VALUES
@@ -51,33 +77,6 @@ INSERT INTO stock_producto(id, stock_total, stock_minimo, stock_almacen, stock_e
     (18, 300, 40, 260, 40, 18),-- Cerveza rubia
     (19, 90, 15, 90, 0, 19),   -- Detergente líquido
     (20, 120, 20, 110, 10, 20);-- Gel corporal
-
-
-INSERT INTO empleados 
-(id, nombre, apellidos, dni, telefono, email, salario,
- dias_vacaciones_verano_restantes, dias_vacaciones_invierno_restantes,
- rol, contrato_horas_semanales, tipo_contrato, preferencia_turno, estado, foto)
-VALUES
-(1, 'Laura', 'García Pérez', '12345678A', '600111222', 'laura.garcia@super.com', 1200, 6, 4, 'CAJERO', 40, 'JORNADA_COMPLETA', 'MANANA', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(2, 'Carlos', 'Santos Ruiz', '23456789B', '600222333', 'carlos.santos@super.com', 1100, 5, 3, 'REPONEDOR', 30, 'PARCIAL', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(3, 'María', 'Lopez Díaz', '34567890C', '600333444', 'maria.lopez@super.com', 1500, 7, 5, 'JEFE_TIENDA', 40, 'JORNADA_COMPLETA', 'INDIFERENTE', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(4, 'Javier', 'Torres Molina', '45678901D', '600444555', 'javier.torres@super.com', 1150, 4, 2, 'CAJERO', 20, 'PARCIAL', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(5, 'Andrea', 'Muñoz Vera', '56789012E', '600555666', 'andrea.munoz@super.com', 1250, 6, 3, 'REPONEDOR', 35, 'JORNADA_COMPLETA', 'MANANA', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(6, 'Pablo', 'Martín López', '67890123F', '600666777', 'pablo.martin@super.com', 1000, 4, 3, 'PESCADERO', 25, 'PARCIAL', 'MANANA', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(7, 'Sonia', 'Navarro Ruiz', '78901234G', '600777888', 'sonia.navarro@super.com', 1400, 7, 4, 'PANADERO', 40, 'JORNADA_COMPLETA', 'INDIFERENTE', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(8, 'Miguel', 'Herrera Soto', '89012345H', '600888999', 'miguel.herrera@super.com', 1600, 9, 5, 'CARNICERO', 40, 'JORNADA_COMPLETA', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg'),
-
-(9, 'Raquel', 'Dominguez Alba', '90123456I', '600999000', 'raquel.dominguez@super.com', 1300, 6, 3, 'CAJERO', 30, 'PARCIAL', 'MANANA', 'INACTIVO', '/images/avatar empleado.jpg'),
-
-(10, 'David', 'Serrano Cruz', '01234567J', '611222333', 'david.serrano@super.com', 1450, 6, 4, 'REPONEDOR', 37, 'JORNADA_COMPLETA', 'TARDE', 'ACTIVO', '/images/avatar empleado.jpg');
-
 
 
 
@@ -307,3 +306,10 @@ INSERT INTO turnos (id, tipo, hora_inicio, hora_fin, fecha, estado, empleado_id,
     (118, 'FIJO', '08:00:00', '12:00:00', '2026-02-01', 'PENDIENTE', 10, 2),
     (119, 'PARTIDO', '14:00:00', '18:00:00', '2026-02-01', 'PENDIENTE', 10, 2),
     (120, 'ROTATIVO', '09:00:00', '13:00:00', '2026-02-01', 'PENDIENTE', 10, 2);
+
+
+/*
+    INSERT INTO solicitudes (id, fecha, hora_inicio, hora_fin, motivo, solicitante_id, suplente_id, estado)
+    VALUES (1, '2025-12-20', '08:00:00', '12:00:00', 'Cita médica', 1, NULL, 'PENDIENTE_DE_ANUNCIO');
+
+*/

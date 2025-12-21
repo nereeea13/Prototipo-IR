@@ -14,7 +14,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   background: #ffffff;
-  padding: 24px 32px;
+  padding: 88px 32px 24px; /* espacio superior para header fijo */
 }
 
 /* ===== HEADER ===== */
@@ -24,13 +24,23 @@ body {
   gap: 16px;
   border-bottom: 2px solid #000;
   padding-bottom: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 0; /* handled by page padding */
+  background-color: rgb(255, 229, 229);
+  /* fixed to top and span full viewport width */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .generar-header h2 {
   margin: 0;
   font-size: 22px;
   font-weight: bold;
+    color: rgb(202, 0, 0);  
 }
 
 .back-btn {
@@ -60,6 +70,43 @@ body {
   gap: 16px;
   width: 100%;
 }
+
+/* ===== EDIT CARD (EditarTurno) ===== */
+.edit-card {
+  max-width: 640px;
+  margin: 24px auto;
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-card label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #222;
+  font-weight: 700; /* etiquetas en negrita */
+}
+
+.edit-card input[type="date"],
+.edit-card input[type="time"],
+.edit-card input[type="number"],
+.edit-card input[type="text"],
+.edit-card select {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400; /* inputs con peso normal */
+}
+
+.edit-card .field { margin-top: 6px; }
 
 /* ===== TARJETA TURNO ===== */
 .turno-card {

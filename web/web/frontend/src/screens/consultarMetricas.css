@@ -19,12 +19,14 @@
   padding: 20px 32px;
   border-bottom: 2px solid #000;
   width: 100%;
+  background-color: rgb(255, 229, 229);
 }
 
 .metricas-header h2 {
   font-size: 24px;
   font-weight: bold;
   margin: 0;
+  color: rgb(202, 0, 0);
 }
 
 .back-btn {

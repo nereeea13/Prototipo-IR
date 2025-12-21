@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TurnoDTO {
+    private Integer id;
     // día en formato ISO (yyyy-MM-dd)
     private String dia;
     // horario en formato "HH:mm-HH:mm"
@@ -17,6 +18,7 @@ public class TurnoDTO {
     public TurnoDTO() {}
 
     public TurnoDTO(Turno t) {
+        if (t.getId() != null) this.id = t.getId();
         if (t.getFecha() != null) this.dia = t.getFecha().toString();
         if (t.getHoraInicio() != null && t.getHoraFin() != null) {
             this.horario = t.getHoraInicio().toString() + "-" + t.getHoraFin().toString();

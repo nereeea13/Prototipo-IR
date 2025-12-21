@@ -29,4 +29,10 @@ public class TurnoController {
         List<TurnoDTO> turnos = turnoService.getTurnosVigenteByEmpleadoNombre(nombre);
         return ResponseEntity.ok(turnos);
     }
+
+    @GetMapping("/id/{id}/turnos/vigente")
+    public ResponseEntity<List<TurnoDTO>> getTurnosVigenteByid(@PathVariable Integer id) {
+        List<TurnoDTO> turnos = turnoService.getTurnosVigenteByEmpleadoId(id);
+        return ResponseEntity.ok(turnos);
+    }
 }

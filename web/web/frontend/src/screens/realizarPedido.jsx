@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./realizarPedido.css";
+import "./realizarPe.css";
 
 export default function RealizarPedido() {
   const { id } = useParams(); // id del pedido

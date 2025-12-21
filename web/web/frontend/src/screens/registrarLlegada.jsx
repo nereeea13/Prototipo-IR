@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./registrarLlegada.css";
+import "./registrarLle.css";
 
 export default function RegistrarLlegada() {
   const { id } = useParams();

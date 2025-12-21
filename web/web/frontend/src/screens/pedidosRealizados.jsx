@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import "./pedidosRealizados.css";
+import "./pedidosReali.css";
 
 export default function PedidosRealizados() {
   const [pedidos, setPedidos] = useState([]);
@@ -56,14 +56,16 @@ export default function PedidosRealizados() {
               </p>
             </div>
 
-            {/* ACCIÓN SOLO EN EN_REPARTO */}
-            {pedido.estado === "EN_ENTREGA" && (
+            {/* ACCIÓN: mostrar botón si está en entrega, si no mostrar mensaje rojo */}
+            {pedido.estado === "EN_ENTREGA" ? (
               <button
                 className="realizar-btn"
                 onClick={() => navigate(`/pedidos/localizacion`)}
               >
                 VER LOCALIZACIÓN
               </button>
+            ) : (
+              <p className="localizacion-no">Localización no disponible</p>
             )}
 
           </div>

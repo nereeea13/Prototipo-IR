@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import "./pedidosEnRevision.css";
+import "./pedidosRe.css";
 
 export default function PedidosEnRevision() {
   const [pedidos, setPedidos] = useState([]);
