@@ -27,6 +27,7 @@ import InformeLogis from "./screens/informesLogistica";
 import InformeEmple from "./screens/informesEmpleado";
 import GenerarHorario from "./screens/generarHorario";
 import VisualizarTurnos from "./screens/visualizarTurnos";
+import InformeRe from "./screens/recepcionDetalles";
 
 
 function App() {
@@ -104,6 +105,8 @@ function App() {
 
         <Route path="/generar-horario" element={<GenerarHorario />} />
         <Route path="/turnos" element={<VisualizarTurnos />} />
+
+        <Route path="/informes/recepcion/:id" element={<InformeRe />} />
 
 
       </Routes>
