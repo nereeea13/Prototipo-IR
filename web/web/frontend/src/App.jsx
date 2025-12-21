@@ -9,6 +9,16 @@ import InventarioTienda from "./screens/inventario";
 import PedidosIntermedia from "./screens/pedidosIntermedia";
 import HorariosIntermedia from "./screens/horariosIntermedia";
 import Empleados from "./screens/empleados";
+import CrearEmpleado from "./screens/crearEmpleado";
+import EmpleadoDetalles from "./screens/empleadoDetalles";
+import EditarEmpleado from "./screens/editarEmpleado";
+import PedidosEnRevision from "./screens/pedidosEnRevision";
+import RealizarPedido from "./screens/realizarPedido";
+import PedidosEnEntrega from "./screens/pedidosEnEntrega";
+import RegistarLlegada from "./screens/registrarLlegada";
+import PedidosRealizados from "./screens/pedidosRealizados";
+import Localizacion from "./screens/localizacion";
+
 
 function App() {
   // const role = localStorage.getItem("role");
@@ -49,9 +59,27 @@ function App() {
 
         <Route path="/pedidos-mercancia" element={<PedidosIntermedia />} />
 
+        <Route path="/pedidos-revisión" element={<PedidosEnRevision />} />
+
         <Route path="/gestionar-horarios" element={<HorariosIntermedia />} />
 
         <Route path="/empleados" element={<Empleados />} />
+
+        <Route path="/empleados/nuevo" element={<CrearEmpleado />} />
+
+        <Route path="/empleados/:id" element={<EmpleadoDetalles />} />
+
+        <Route path="/empleados/:id/editar" element={<EditarEmpleado />} />
+
+        <Route path="/pedidos/:id/realizar" element={<RealizarPedido />} />
+
+        <Route path="/pedidos-en-entrega" element={<PedidosEnEntrega />} />
+
+        <Route path="/pedidos/:id/registrar-llegada" element={<RegistarLlegada />} />
+
+        <Route path="/pedidos-realizados" element={<PedidosRealizados />} />
+
+        <Route path="/pedidos/localizacion" element={<Localizacion />} />
 
 
       </Routes>
