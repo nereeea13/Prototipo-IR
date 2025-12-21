@@ -49,6 +49,17 @@ public class TurnoService {
                 .orElseGet(java.util.Collections::emptyList);
     }
 
+    public List<TurnoDTO> getTurnosVigenteByEmpleadoId(Integer id) {
+        java.util.Optional<Empleado> optEmpleado = empleadoRepository.findById(id);
+        if (optEmpleado.isEmpty()) return java.util.Collections.emptyList();
+        Empleado empleado = optEmpleado.get();
+
+        return horarioRepositorio.findByVigenteTrue()
+                .map(h -> turnoRepositorio.findByHorarioIdAndEmpleadoId(h.getId(), empleado.getId()).stream()
+                        .map(TurnoDTO::new).collect(Collectors.toList()))
+                .orElseGet(java.util.Collections::emptyList);
+    }
+
     public List<TurnoDTO> getRandomTurnosHorarioVigente(int count) {
         return horarioRepositorio.findByVigenteTrue()
                 .map(h -> {

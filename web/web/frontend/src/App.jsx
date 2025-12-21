@@ -27,6 +27,7 @@ import InformeLogis from "./screens/informesLogistica";
 import InformeEmple from "./screens/informesEmpleado";
 import GenerarHorario from "./screens/generarHorario";
 import VisualizarTurnos from "./screens/visualizarTurnos";
+import SolicitudesCambiosJefe from "./screens/solicitudesCambiosJefe";
 
 
 function App() {
@@ -71,6 +72,8 @@ function App() {
         <Route path="/pedidos-revisión" element={<PedidosEnRevision />} />
 
         <Route path="/gestionar-horarios" element={<HorariosIntermedia />} />
+
+        <Route path="/gestionar-cambios" element={<SolicitudesCambiosJefe />} />
 
         <Route path="/empleados" element={<Empleados />} />
 

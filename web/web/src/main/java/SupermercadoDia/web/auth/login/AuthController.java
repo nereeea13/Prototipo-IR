@@ -39,7 +39,8 @@ public Map<String, String> login(@RequestBody Map<String, String> body) {
         "token", token,
         "role", role,
         "id", user.getId().toString(),
-        "username", user.getUsername()
+        "username", user.getUsername(),
+        "empleadoId", user.getEmpleado().getId().toString()
     );
 }
 
