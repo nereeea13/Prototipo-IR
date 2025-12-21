@@ -4,19 +4,11 @@ import java.time.LocalDate;
 
 import SupermercadoDia.web.enumerados.EstadoPedido;
 import SupermercadoDia.web.model.BaseEntity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class PedidoTienda extends BaseEntity {
 
     private LocalDate fechaCreacion; 
     private LocalDate fechaEntrega;
-
-    @Enumerated(EnumType.STRING)
     private EstadoPedido estado;
     private String empresaReparto; 
     private String direccionEnvio; 

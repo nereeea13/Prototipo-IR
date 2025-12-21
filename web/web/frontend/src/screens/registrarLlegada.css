@@ -1,0 +1,136 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+.realizar-container {
+  width: 100vw;                 /* ⬅️ ancho completo */
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+
+.realizar-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background-color: rgb(255, 229, 229);
+  border-bottom: 2px solid #630000;
+  box-sizing: border-box;
+}
+
+.realizar-header h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color:rgb(165, 0, 0)
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* ===== LISTA DE PRODUCTOS ===== */
+
+.productos-lista {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== CARD DE PRODUCTO ===== */
+
+.producto-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid #000;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+
+/* ===== IMAGEN ===== */
+
+.producto-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* ===== INFO ===== */
+
+.producto-info p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.stock-warning {
+  color: #c40000;
+  font-weight: bold;
+}
+
+/* ===== ACCIONES / BOTONES ===== */
+
+.acciones {
+  width: 100%;
+  display: flex;
+  justify-content: center;     /* ⬅️ centrados */
+  gap: 32px;
+  padding: 24px;
+  border-top: 2px solid #000;
+  box-sizing: border-box;
+}
+
+.btn-secundario,
+.btn-primario {
+  flex: 1;                     /* ⬅️ ocupan ancho */
+  max-width: 420px;            /* ⬅️ ancho tipo ordenador */
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Secundario */
+.btn-secundario {
+  background: #7affad;
+  border: 2px solid #1e7522;
+}
+
+.btn-secundario:hover {
+  background: #f0f0f0;
+}
+
+/* Primario */
+.btn-primario {
+  background: #ff8e8e;
+  border: 2px solid #7c0000;
+  color: #000000;
+}
+
+.btn-primario:hover {
+  background: #1cdd2c;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .acciones {
+    flex-direction: column;
+  }
+
+  .btn-secundario,
+  .btn-primario {
+    max-width: 100%;
+  }
+}
+
+/* =====*

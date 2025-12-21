@@ -80,22 +80,67 @@ VALUES
 
 
 
--- Pedidos de mercancía EN REVISION
-INSERT INTO pedidos_mercancia (id, fecha_creacion, fecha_llegada, estado) VALUES
-    (6, '2025-12-15', null, 'EN_REVISION'),
-    (7, '2025-12-22', null, 'EN_REVISION'),
-    (8, '2025-12-29', null, 'EN_REVISION');
+
+INSERT INTO pedido_mercancia (id, fecha_creacion, fecha_llegada, estado) VALUES
+-- EN PROCESO (3)
+(7,  '2025-12-18', NULL, 'EN_PROCESO'),
+(8,  '2025-12-19', NULL, 'EN_PROCESO'),
+(9,  '2025-12-20', NULL, 'EN_PROCESO'),
+
+-- EN PREPARACIÓN (2)
+(10, '2025-12-15', NULL, 'EN_PREPARACION'),
+(11, '2025-12-16', NULL, 'EN_PREPARACION'),
+
+-- EN ENTREGA (2)
+(12, '2025-12-12', NULL, 'EN_ENTREGA'),
+(13, '2025-12-13', NULL, 'EN_ENTREGA'),
+
+-- ENTREGADO (1)
+(14, '2025-11-28', '2025-12-02', 'ENTREGADO');
 
 
--- Pedidos de mercancía EN PREPARACION, EN ENTREGA y ENTREGADO
-INSERT INTO pedidos_mercancia (id, fecha_creacion, fecha_llegada, estado) VALUES
-    (1, '2025-12-01', '2025-12-06', 'ENTREGADO'),
-    (2, '2025-12-03', '2025-12-10', 'ENTREGADO'),
-    (3, '2025-12-05', null, 'EN_ENTREGA'),
-    (4, '2025-12-13', null, 'EN_PREPARACION'),
-    (5, '2025-12-09', null, 'EN_PREPARACION');
-   
 
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(19, 7, 1, 60, 0),
+(20, 7, 8, 40, 0),
+(21, 7, 9, 30, 0);
 
-INSERT INTO transportistas_camion (id, nombre, apellidos, telefono, empresa) VALUES
-    (1, 'Luis', 'Fernández Gómez', '656758426', 'Empresa XYZ');
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(22, 8, 3, 100, 0),
+(23, 8, 7, 80, 0),
+(24, 8, 17, 70, 0);
+
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(27, 10, 2, 50, 0),
+(28, 10, 14, 40, 0),
+(29, 10, 15, 30, 0);
+
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(30, 11, 5, 70, 0),
+(31, 11, 11, 60, 0);
+
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(32, 12, 6, 80, 40),
+(33, 12, 12, 50, 25);
+
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(34, 13, 4, 90, 45),
+(35, 13, 16, 60, 30);
+
+INSERT INTO lineas_pedido
+(id, pedido_id, producto_id, cantidad_solicitada, cantidad_recibida)
+VALUES
+(36, 14, 13, 40, 40),
+(37, 14, 20, 50, 50);

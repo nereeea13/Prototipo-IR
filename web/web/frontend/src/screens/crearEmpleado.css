@@ -1,0 +1,77 @@
+.nuevo-empleado {
+  width: 100vw;          /* ancho total de pantalla */
+  min-height: 100vh;     /* alto total */
+  padding: 24px 40px;    /* espacio lateral cómodo */
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Header */
+.nuevo-empleado-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 12px;
+}
+
+/* Foto */
+.foto-box {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-placeholder {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+/* Formulario ocupa todo el ancho */
+.form-col {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas en desktop */
+  gap: 16px 32px;
+}
+
+/* Campos que deben ir a lo ancho completo */
+.form-col .full {
+  grid-column: 1 / -1;
+}
+
+.form-col label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.form-col input {
+  padding: 8px;
+  border: 1px solid #000;
+}
+
+/* Botón confirmar */
+.confirmar-btn {
+  grid-column: 1 / -1;
+  margin-top: 24px;
+  padding: 14px;
+  background: #b6f7a6;
+  border: 2px solid #5cb85c;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Error */
+.error {
+  grid-column: 1 / -1;
+  color: red;
+}

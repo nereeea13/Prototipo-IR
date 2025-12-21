@@ -1,0 +1,139 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+.pedidos-container {
+  width: 100%;                /* ✅ ancho real del viewport */
+  min-height: 100vh;
+  padding: 24px 32px;
+  box-sizing: border-box;     /* ✅ padding incluido en el ancho */
+  background: #ffffff;
+  font-family: sans-serif;
+}
+
+/* ===== HEADER ===== */
+
+.pedidos-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #fcc1c1;
+  border-bottom: 2px solid #000;
+  padding: 12px 0;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.pedidos-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== LISTA ===== */
+
+.pedidos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* ===== CARD DE PEDIDO ===== */
+
+.pedido-card {
+  width: 100%;                /* ✅ ocupa todo el ancho */
+  border: 2px solid #000;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* ===== INFO ===== */
+
+.pedido-info p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* ===== BOTÓN ===== */
+
+.realizar-btn {
+  padding: 12px 20px;
+  background: #fff;
+  border: 2px solid #ce0000;
+  color: #cc1212;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.realizar-btn:hover {
+  background: #ff9d9d;
+  color: #fff;
+}
+
+/* ===== ACCIONES ===== */
+
+.acciones {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Botones ocupan ancho grande */
+.btn-secundario,
+.btn-primario {
+  flex: 1;
+  max-width: 480px;           /* ⬅️ más ancho en desktop */
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos individuales */
+.btn-secundario {
+  background: #fff;
+  border: 2px solid #000;
+}
+
+.btn-primario {
+  background: #2b66ff;
+  border: 2px solid #2b66ff;
+  color: #fff;
+}
+
+.btn-primario:hover {
+  background: #1e4ed8;
+}
+
+.btn-secundario:hover {
+  background: #f0f0f0;
+}
+
+/* ===== ESTADOS ===== */
+
+.estado {
+  font-weight: bold;
+}
+
+.estado-EN_PROCESO { color: #1e40af; }
+.estado-EN_PREPARACION { color: #ff3333; }
+.estado-EN_ENTREGA { color: #ffca39; }
+.estado-ENTREGADO { color: #52ff3b; }
+
+/* ===== RESET IMPORTANTE ===== */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

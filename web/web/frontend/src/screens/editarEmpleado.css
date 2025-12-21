@@ -1,0 +1,81 @@
+.editar-empleado-desktop {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+.detalle-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px;
+  border-bottom: 2px solid #000;
+}
+
+.detalle-header h2 {
+  font-size: 20px;
+}
+
+/* AVATAR */
+.detalle-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  background: #000;
+  border-radius: 50%;
+}
+
+/* FORM VERTICAL */
+.form-vertical {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* FILAS COMO EN LA IMAGEN */
+.fila {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.fila span {
+  width: 180px;
+  font-weight: bold;
+}
+
+.fila input {
+  flex: 1;
+  padding: 6px;
+  border: 2px solid #000;
+}
+
+/* BOTÓN */
+.confirmar-btn {
+  width: 100%;
+  margin: 32px 0;
+  padding: 14px;
+  background: #c6ffb3;
+  border: 2px solid #4caf50;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* UTIL */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.error {
+  color: red;
+}

@@ -1,0 +1,93 @@
+.empleado-detalle-desktop {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+/* Header ocupa todo el ancho */
+.detalle-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px;
+  border-bottom: 2px solid #000;
+}
+
+.detalle-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Avatar centrado */
+.detalle-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  background: #1bb;
+  border-radius: 50%;
+}
+
+/* Datos en columna, centrados visualmente pero ocupando ancho */
+.detalle-datos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+.detalle-datos p {
+  margin: 8px 0;
+}
+
+/* Footer con botón ancho */
+.detalle-footer {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.editar-btn {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px;
+  background: #ffd6d6;
+  border: 2px solid #ff4d4d;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Utilidades */
+.center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: red;
+}

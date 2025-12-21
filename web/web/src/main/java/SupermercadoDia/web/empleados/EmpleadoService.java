@@ -55,12 +55,8 @@ public class EmpleadoService {
         empleadoExistente.setDni(empleadoActualizado.getDni());
         empleadoExistente.setTelefono(empleadoActualizado.getTelefono());
         empleadoExistente.setEmail(empleadoActualizado.getEmail());
-        empleadoExistente.setSalario(empleadoActualizado.getSalario());
-        empleadoExistente.setDiasVacacionesVeranoRestantes(empleadoActualizado.getDiasVacacionesVeranoRestantes());
-        empleadoExistente.setDiasVacacionesInviernoRestantes(empleadoActualizado.getDiasVacacionesInviernoRestantes());
         empleadoExistente.setRol(empleadoActualizado.getRol());
         empleadoExistente.setContratoHorasSemanales(empleadoActualizado.getContratoHorasSemanales());
-        empleadoExistente.setTipoContrato(empleadoActualizado.getTipoContrato());
         empleadoExistente.setPreferenciaTurno(empleadoActualizado.getPreferenciaTurno());
         empleadoExistente.setEstado(empleadoActualizado.getEstado());
         empleadoExistente.setFoto(empleadoActualizado.getFoto());
