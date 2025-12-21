@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./inventario.css";
+import "./inven.css";
 
 const CATEGORIES = [
   { label: "Todas", value: "" },

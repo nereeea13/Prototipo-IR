@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: #fcc1c1;
+  background-color: rgb(255, 229, 229);
   border-bottom: 2px solid #000;
   padding-bottom: 12px;
   margin-bottom: 24px;
@@ -65,7 +65,7 @@
 
 .realizar-btn {
   padding: 12px 20px;
-  background: #fff;
+  background: #dff1ff;
   border: 2px solid #2b66ff;
   color: #2b66ff;
   font-weight: bold;

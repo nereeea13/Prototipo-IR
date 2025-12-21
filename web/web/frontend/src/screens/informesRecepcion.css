@@ -16,6 +16,8 @@
   gap: 16px;
   padding: 20px 32px;
   border-bottom: 2px solid #000;
+  background-color: #ffd9d9;
+  color: rgb(202, 0, 0);
 }
 
 .infrec-header h2 {

@@ -1,10 +1,10 @@
 /* ===== CONTENEDOR PRINCIPAL ===== */
 
 .pedidos-container {
-  width: 100%;                /* ✅ ancho real del viewport */
+  width: 100vw;              /* ⬅️ ocupa todo el ancho real */
   min-height: 100vh;
-  padding: 24px 32px;
-  box-sizing: border-box;     /* ✅ padding incluido en el ancho */
+  padding: 88px 32px 24px; /* extra top padding to account for fixed header */
+  box-sizing: border-box;
   background: #ffffff;
   font-family: sans-serif;
 }
@@ -12,25 +12,33 @@
 /* ===== HEADER ===== */
 
 .pedidos-header {
+  /* fixed header spanning full viewport width */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 1000;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: #fcc1c1;
+  background-color: rgb(255, 229, 229);
   border-bottom: 2px solid #000;
-  padding: 12px 0;
-  margin-bottom: 24px;
-  width: 100%;
+  padding: 12px 32px;
 }
 
 .pedidos-header h2 {
   font-size: 22px;
   font-weight: bold;
+  color: rgb(202, 0, 0);
 }
 
 .back-btn {
   background: none;
   border: none;
   cursor: pointer;
+  color: rgb(202, 0, 0)
 }
 
 /* ===== LISTA ===== */
@@ -39,13 +47,14 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-top: 40px; /* espacio entre header fijo y primer pedido */
   width: 100%;
 }
 
 /* ===== CARD DE PEDIDO ===== */
 
 .pedido-card {
-  width: 100%;                /* ✅ ocupa todo el ancho */
+  width: 100%;               /* ⬅️ ocupa todo el ancho */
   border: 2px solid #000;
   padding: 20px 32px;
   display: flex;
@@ -65,25 +74,26 @@
 
 .realizar-btn {
   padding: 12px 20px;
-  background: #fff;
-  border: 2px solid #ce0000;
-  color: #cc1212;
+  background: #c9ffbf;
+  border: 2px solid #156900;
+  color: #000000;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .realizar-btn:hover {
-  background: #ff9d9d;
+  background: #2b66ff;
   color: #fff;
 }
+
 
 /* ===== ACCIONES ===== */
 
 .acciones {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center;      /* ⬅️ centra el bloque */
   gap: 32px;
   margin-top: 40px;
 }
@@ -91,9 +101,9 @@
 /* Botones ocupan ancho grande */
 .btn-secundario,
 .btn-primario {
-  flex: 1;
-  max-width: 480px;           /* ⬅️ más ancho en desktop */
-  padding: 16px 0;
+  flex: 1;                      /* ⬅️ ocupan todo el ancho */
+  max-width: 400px;             /* ⬅️ límite para pantallas grandes */
+  padding: 14px 0;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -119,21 +129,9 @@
   background: #f0f0f0;
 }
 
-/* ===== ESTADOS ===== */
-
-.estado {
-  font-weight: bold;
-}
-
-.estado-EN_PROCESO { color: #1e40af; }
-.estado-EN_PREPARACION { color: #ff3333; }
-.estado-EN_ENTREGA { color: #ffca39; }
-.estado-ENTREGADO { color: #52ff3b; }
 
 /* ===== RESET IMPORTANTE ===== */
 
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
 }

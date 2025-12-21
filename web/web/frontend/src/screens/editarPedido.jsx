@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./realizarPedido.css";
+import "./realizarPe.css";
 
 export default function EditarPedido() {
   const { id } = useParams();
@@ -128,7 +128,19 @@ export default function EditarPedido() {
             onChange={e => setNewProductQty(e.target.value)}
           />
 
-          <button onClick={handleAddLinea}>Añadir</button>
+          <button
+            onClick={handleAddLinea}
+            style={{
+              background: '#e8ffdf',
+              border: '2px solid #9bdc7a',
+              padding: '8px 12px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              color: 'black',
+            }}
+          >
+            Añadir
+          </button>
         </div>
       </div>
 

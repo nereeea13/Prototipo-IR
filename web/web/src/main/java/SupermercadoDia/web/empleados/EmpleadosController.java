@@ -50,7 +50,12 @@ public class EmpleadosController {
         nuevoEmpleado.setTipoContrato(TipoContrato.JORNADA_COMPLETA);
         nuevoEmpleado.setPreferenciaTurno(empleado.getPreferenciaTurno());
         nuevoEmpleado.setEstado(EstadoEmpleado.ACTIVO);
-        nuevoEmpleado.setFoto(empleado.getFoto());
+        // si no se proporciona foto, asignar la imagen por defecto usada en los datos de ejemplo
+        String foto = empleado.getFoto();
+        if (foto == null || foto.trim().isEmpty()) {
+            foto = "/images/avatar empleado.jpg";
+        }
+        nuevoEmpleado.setFoto(foto);
         Empleado empleadoCreado = empleadoService.createEmpleado(nuevoEmpleado);
         return ResponseEntity.ok(new EmpleadoDTO(empleadoCreado));
     }

@@ -24,7 +24,7 @@
 .realizar-header h2 {
   font-size: 30px;
   font-weight: bold;
-  color:rgb(165, 0, 0)
+  color:rgb(202, 0, 0);
 }
 
 .back-btn {
@@ -101,7 +101,7 @@
 
 /* Secundario */
 .btn-secundario {
-  background: #7affad;
+  background: #ceffe1;
   border: 2px solid #1e7522;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .btn-primario:hover {
-  background: #1cdd2c;
+  background: #ff8080;
 }
 
 
