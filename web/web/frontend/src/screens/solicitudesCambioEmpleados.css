@@ -1,0 +1,99 @@
+.solicitudes-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.generar-horario-page {
+    margin-bottom: 30px;
+}
+
+.generar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.back-btn:hover {
+    color: #0066cc;
+}
+
+.generar-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 28px;
+}
+
+.solicitudes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.solicitud-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: box-shadow 0.3s;
+}
+
+.solicitud-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.solicitud-content p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.solicitud-content strong {
+    color: #333;
+}
+
+.estado {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #666;
+}
+
+.btn-aplicar {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-aplicar:hover {
+    background: #0052a3;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: #666;
+}

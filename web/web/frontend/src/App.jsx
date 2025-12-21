@@ -30,6 +30,8 @@ import VisualizarTurnos from "./screens/visualizarTurnos";
 import EditarTurno from "./screens/editarTurno";
 import InformeRe from "./screens/recepcionDetalles";
 import SolicitudesCambiosJefe from "./screens/solicitudesCambiosJefe";
+import SolicitudesCambioEmpleados from "./screens/solicitudesCambioEmpleados";
+
 
 
 function App() {
@@ -112,6 +114,8 @@ function App() {
         <Route path="/horarios/editar" element={<EditarTurno />} />
 
         <Route path="/informes/recepcion/:id" element={<InformeRe />} />
+
+        <Route path="/solicitudes-cambio-empleados" element={<SolicitudesCambioEmpleados />} />
 
 
       </Routes>
